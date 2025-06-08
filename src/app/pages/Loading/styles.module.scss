@@ -1,0 +1,33 @@
+.loading-page {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--white-color);
+	margin-top: -13rem;
+
+	.app-name {
+		font-size: 3rem;
+		font-weight: bolder;
+		text-transform: uppercase;
+		background-image: linear-gradient(to right, #4799e9, #65f4cd, #ff4ecd);
+		background-size: 300% 100%;
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		animation: gradientAnimation 3s ease infinite;
+	}
+}
+
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

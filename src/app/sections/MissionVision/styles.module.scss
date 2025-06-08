@@ -1,0 +1,106 @@
+.mission,
+.vision {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10rem;
+   .content {
+      flex: 1;
+      height: fit-content;
+      border-left: 0.5rem solid var(--secondary-color);
+      padding-left: 1.5rem;
+
+      .desc {
+         @include font-style(1.6rem, 400, normal, 2.3rem);
+         text-align: justify;
+      }
+   }
+   .image-wrapper {
+      flex: 1;
+      position: relative;
+      display: flex;
+      img {
+         border-radius: 0.8rem;
+         width: 100%;
+         object-fit: cover;
+      }
+      &::after {
+         content: '';
+         position: absolute;
+         @include size(12.5rem);
+         background-color: var(--secondary-color);
+         border-radius: 50%;
+         right: -1rem;
+         bottom: -7rem;
+         clip-path: polygon(50% 50%, 100% 50%, 100% 0, 0 0, 0 50%);
+         transform: rotate(50deg);
+      }
+   }
+}
+.mission {
+   flex-direction: row-reverse;
+   .image-wrapper {
+      &::after {
+         left: 0.1rem;
+         bottom: -3rem;
+         clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 0 100%, 0 50%);
+         transform: rotate(50deg);
+      }
+   }
+}
+
+@include Tablet {
+   .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+
+      .mission,
+      .vision {
+         gap: 3rem;
+         .image-wrapper {
+            &::after {
+               @include size(10rem);
+            }
+         }
+      }
+   }
+}
+
+@include Mobile {
+   .wrapper {
+      .mission,
+      .vision {
+         flex-direction: column;
+
+         .content {
+            padding-left: 0;
+            border: none;
+            h2 {
+               width: fit-content;
+               margin: 0 auto;
+               margin-bottom: 2rem;
+               padding-bottom: 0.5rem;
+               border-bottom: 0.5rem solid var(--secondary-color);
+            }
+         }
+
+         .image-wrapper {
+            width: 80%;
+
+            &::after {
+               @include size(8rem);
+            }
+         }
+      }
+
+      .vision {
+         .image-wrapper {
+            &::after {
+               right: -1rem;
+               bottom: -5rem;
+            }
+         }
+      }
+   }
+}

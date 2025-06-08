@@ -1,0 +1,125 @@
+@mixin responsive($breakpoint) {
+	@media screen and (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin Desktop {
+	// Large devices (desktops, less than 1200px)
+	@include responsive(74.99875em) {
+		@content;
+	}
+}
+
+@mixin Tablet {
+	// Medium devices (tablets, less than 992px)
+	@include responsive(61.99875em) {
+		@content;
+	}
+}
+
+@mixin Mobile {
+	// Small devices (landscape phones, less than 768px)
+	@include responsive(47.99875em) {
+		@content;
+	}
+}
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin flex(
+	$justify: flex-start,
+	$align: stretch,
+	$direction: null,
+	$gap: null
+) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+
+	@if $direction != null {
+		flex-direction: $direction;
+	}
+	@if $gap != null {
+		gap: $gap;
+	}
+}
+
+@mixin flex-center($direction: null, $gap: null) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@if $direction != null {
+		flex-direction: $direction;
+	}
+	@if $gap != null {
+		gap: $gap;
+	}
+}
+
+@mixin font-style(
+	$font-size,
+	$weight: null,
+	$style: null,
+	$height: null,
+	$spacing: null
+) {
+	font-size: $font-size;
+
+	@if $weight != null {
+		font-weight: $weight;
+	}
+
+	@if $style != null {
+		font-style: $style;
+	}
+
+	@if $height != null {
+		line-height: $height;
+	}
+
+	@if $spacing != null {
+		letter-spacing: $spacing;
+	}
+}
+
+@mixin text-ellipsis($lines: 1) {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	@if $lines == 1 {
+		white-space: nowrap;
+	} @else {
+		-webkit-line-clamp: $lines;
+	}
+}
+
+@mixin transition($property: all, $duration: 0.3s, $ease: ease) {
+	transition: $property $duration $ease;
+}
+
+@mixin gradient($start, $end, $direction: to bottom) {
+	background: linear-gradient($direction, $start, $end);
+}
+
+@mixin background($url, $position: center, $size: cover, $repeat: no-repeat) {
+	background: url($url) $position / $size $repeat;
+}
+
+@mixin cover($width: 100%, $height: $width, $radius: 50%, $fit: cover) {
+	width: $width;
+	height: $height;
+	border-radius: $radius;
+	object-fit: $fit;
+}
+
+@mixin border-radius-top-bottom($radius) {
+	border-top-right-radius: $radius;
+	border-top-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	border-bottom-right-radius: $radius;
+}

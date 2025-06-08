@@ -1,0 +1,34 @@
+.btn-menu {
+   width: 3rem;
+   height: 2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background-color: transparent;
+   cursor: pointer;
+   span {
+      height: 2px;
+      background-color: #333;
+      transition: 0.5s;
+      z-index: 999;
+   }
+   &.primary {
+      span {
+         background-color: var(--primary-color);
+      }
+   }
+   &.active {
+      span {
+         background-color: var(--secondary-color-2);
+      }
+      span:nth-child(1) {
+         transform: translateY(0.9rem) rotate(-45deg);
+      }
+      span:nth-child(2) {
+         opacity: 0;
+      }
+      span:nth-child(3) {
+         transform: translateY(-0.9rem) rotate(45deg);
+      }
+   }
+}

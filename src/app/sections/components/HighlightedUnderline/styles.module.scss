@@ -1,0 +1,21 @@
+.highlight {
+   position: relative;
+   width: fit-content;
+   color: var(--primary-color);
+   white-space: nowrap;
+   .underline {
+      position: absolute;
+      display: flex;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(100%);
+      color: var(--secondary-color);
+      svg {
+         flex: 1;
+         flex-shrink: 0;
+      }
+   }
+}

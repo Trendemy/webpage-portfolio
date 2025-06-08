@@ -1,0 +1,52 @@
+.wrapper-feedbacks {
+	position: relative;
+	display: flex;
+
+	.deco {
+		flex: 1;
+		color: var(--secondary-color);
+
+		.arrow-line,
+		.brush-stroke {
+			position: absolute;
+			width: 15rem;
+		}
+		.arrow-line {
+			top: 0;
+			transform: translate(50%, -30%);
+		}
+		.brush-stroke {
+			bottom: 0;
+		}
+	}
+
+	.feedbacks {
+		margin: 0 auto;
+		width: 60%;
+	}
+}
+
+@include Desktop {
+	.wrapper-feedbacks {
+		.deco {
+			.arrow-line,
+			.brush-stroke {
+				width: 10rem;
+			}
+			.arrow-line {
+				transform: translate(50%, -100%);
+			}
+		}
+	}
+}
+
+@include Mobile {
+	.wrapper-feedbacks {
+		.deco {
+			display: none;
+		}
+		.feedbacks {
+			width: 100%;
+		}
+	}
+}

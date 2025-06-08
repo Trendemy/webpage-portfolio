@@ -1,0 +1,109 @@
+.wrapper {
+	--content-width: 50%;
+	--gallery-width: 50%;
+
+	display: flex;
+	align-items: center;
+
+	.content {
+		width: var(--content-width);
+		.heading {
+			--space-bottom: 2rem;
+			border-bottom: 0.2rem dashed #9ca3a2;
+			padding-bottom: var(--space-bottom);
+			margin-bottom: var(--space-bottom);
+
+			.title {
+				color: var(--primary-color);
+				text-transform: uppercase;
+			}
+		}
+
+		.goals {
+			display: flex;
+			flex-direction: column;
+			gap: 3rem;
+			&-item {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+
+				&__icon {
+					@include size(1.6rem);
+					color: var(--primary-color);
+					flex-shrink: 0;
+				}
+			}
+		}
+	}
+
+	.gallery {
+		--image-width: 60%;
+		--image-sub-width: calc(var(--image-width) - 10%);
+		--image-sub-left: calc(
+			(var(--image-sub-width) / 2) -
+				(var(--image-width) + var(--image-sub-width) - 100%)
+		);
+		--brush-left: calc(
+			(var(--image-width) / 2) - (var(--image-width) * 2 - 100%)
+		);
+
+		position: relative;
+		width: var(--gallery-width);
+		display: flex;
+		img {
+			object-fit: cover;
+			border-radius: 1rem;
+		}
+		img:first-of-type {
+			width: var(--image-width);
+			margin-left: auto;
+			aspect-ratio: 1 / 1.2;
+		}
+		img:last-of-type {
+			position: absolute;
+			width: var(--image-sub-width);
+			top: 50%;
+			left: var(--image-sub-left);
+			aspect-ratio: 1.2 / 1;
+			transform: translateY(-50%);
+		}
+		.brush-stroke {
+			position: absolute;
+			width: var(--image-width);
+			left: var(--brush-left);
+			bottom: 0;
+			color: var(--secondary-color);
+		}
+	}
+}
+
+@include Tablet {
+	.wrapper {
+		--content-width: 100%;
+		--gallery-width: 100%;
+
+		flex-direction: column;
+		gap: 5rem;
+
+		.content {
+			.heading {
+				text-align: center;
+			}
+		}
+
+		.gallery {
+			--image-margin-right: calc((var(--image-sub-left)) / 2);
+
+			img:first-of-type {
+				margin-right: var(--image-margin-right);
+			}
+			img:last-of-type {
+				left: calc((var(--image-sub-left)) - var(--image-margin-right));
+			}
+			.brush-stroke {
+				left: calc((var(--brush-left)) - var(--image-margin-right));
+			}
+		}
+	}
+}

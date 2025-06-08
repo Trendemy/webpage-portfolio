@@ -1,0 +1,47 @@
+:root {
+   --primary-font: 'Roboto', sans-serif;
+   --footer-bg: #151c1b;
+   --primary-color: #0fc8a9;
+   --secondary-color: #ef6e20;
+   --secondary-color-2: #086e5d;
+   --text-color: #03110f;
+   --white-color: #fff;
+   --dark-color: #333;
+
+   font-synthesis: none;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-family: var(--primary-font);
+   font-size: 1.6rem;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+   font-family: inherit;
+}
+
+button {
+   outline: none;
+   border: none;
+}
+
+ul {
+   list-style: none;
+}

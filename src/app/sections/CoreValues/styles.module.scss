@@ -1,0 +1,127 @@
+.wrapper {
+   --gap-size: 5rem;
+
+   position: relative;
+   padding-top: 5rem;
+
+   &::before,
+   &::after {
+      position: absolute;
+      content: '';
+      background-color: var(--secondary-color);
+      border-radius: 50%;
+   }
+   &::before {
+      @include size(4.5rem);
+      top: 0;
+      left: -5rem;
+   }
+
+   &::after {
+      @include size(10rem);
+      top: -3rem;
+      right: 10rem;
+      clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+      transform: rotate(45deg);
+   }
+
+   .heading,
+   .content {
+      display: flex;
+      gap: var(--gap-size);
+   }
+
+   .heading {
+      &-hidden,
+      &-main {
+         flex: 1;
+      }
+   }
+   .content {
+      align-items: center;
+      .images,
+      .list {
+         flex: 1;
+      }
+      .images {
+         display: flex;
+         gap: 1.5rem;
+         &-wrapper-left {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+            .image-1 {
+               border-top-left-radius: 10.5rem;
+            }
+            .image-2 {
+               border-radius: 50%;
+               aspect-ratio: 1;
+            }
+         }
+         &-wrapper-right {
+            position: relative;
+            width: 55%;
+            img {
+               width: 100%;
+               object-fit: cover;
+            }
+            .image-3 {
+               border-top-right-radius: 14.1rem;
+               border-bottom-left-radius: 14.1rem;
+            }
+
+            &::before {
+               @include size(11rem);
+               position: absolute;
+               content: '';
+               border-radius: 50%;
+               top: -2rem;
+               right: 0;
+               background-color: var(--secondary-color);
+               z-index: -1;
+            }
+         }
+      }
+      .list {
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+      }
+   }
+}
+
+@include Tablet {
+   .wrapper {
+      &::before {
+         left: 100%;
+         transform: translateX(-50%);
+      }
+
+      &::after {
+         display: none;
+      }
+      .heading {
+         text-align: center;
+         &-hidden {
+            display: none;
+         }
+      }
+      .content {
+         flex-direction: column-reverse;
+      }
+   }
+}
+
+@include Mobile {
+   .wrapper {
+      &::before {
+         transform: translateX(-100%);
+      }
+   }
+}

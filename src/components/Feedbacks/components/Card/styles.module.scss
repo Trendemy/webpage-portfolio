@@ -1,0 +1,63 @@
+.card {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	gap: 3rem;
+	@include transition;
+	.information {
+		--avatar-size: 5.8rem;
+		--icon-size: 4.5rem;
+		--name-size: 1.8rem;
+		--role-size: 1.6rem;
+
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		.avatar {
+			@include cover(var(--avatar-size));
+		}
+		.details {
+			.name,
+			.role {
+				line-height: 2.6rem;
+			}
+			.name {
+				font-size: var(--name-size);
+			}
+			.role {
+				font-weight: 400;
+				font-size: var(--role-size);
+				color: var(--primary-color);
+			}
+		}
+		.icon {
+			@include size(var(--icon-size));
+			position: absolute;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			top: -3rem;
+			right: 0;
+			svg {
+				fill: var(--primary-color);
+			}
+		}
+	}
+}
+
+@include Mobile {
+	.card {
+		.information {
+			--avatar-size: 4.5rem;
+			--icon-size: 3rem;
+			--role-size: 1.5rem;
+
+			flex-direction: column;
+			.details {
+				text-align: center;
+			}
+		}
+	}
+}

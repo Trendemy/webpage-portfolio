@@ -1,0 +1,94 @@
+.button {
+   position: relative;
+   font-size: 1.8rem;
+   font-weight: 700;
+   line-height: 100%;
+   letter-spacing: 1.25%;
+   background-color: transparent;
+   border-radius: 0.5rem;
+   padding: 2rem 3rem;
+   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+   @include transition(all, 0.3s);
+   cursor: pointer;
+   user-select: none;
+   overflow: hidden;
+   z-index: 1;
+
+   &::after {
+      content: '';
+      position: absolute;
+      width: 510%;
+      border-radius: 50%;
+      background-color: var(--secondary-color-2);
+      left: 50%;
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.3s ease-in-out, top 0.5s ease, border 0.5s ease;
+      z-index: -1;
+   }
+
+   svg {
+      @include size(1.5rem);
+   }
+
+   &.primary {
+      &::after {
+         top: 100%;
+      }
+
+      &:hover::after {
+         top: 150%;
+         transform: translate(-50%, -100%) scale(1);
+      }
+   }
+
+   &.secondary {
+      &::after {
+         top: 50%;
+      }
+      &:hover::after {
+         transform: translate(-50%, -50%) scale(1);
+      }
+   }
+
+   &.secondary {
+      color: var(--white-color);
+      background-color: var(--secondary-color);
+   }
+   &.primary {
+      color: var(--white-color);
+      background-color: var(--primary-color);
+
+      &.outline {
+         background-color: transparent;
+         color: var(--primary-color);
+         border: 0.2rem solid var(--primary-color);
+
+         &:hover {
+            border-color: var(--secondary-color-2);
+            color: var(--white-color);
+         }
+      }
+   }
+
+   &:active {
+      transform: scale(1.02);
+   }
+
+   &.disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+
+      &:active {
+         transform: scale(1);
+      }
+   }
+}
+
+@include Tablet {
+   .button {
+      font-size: 1.6rem;
+      font-weight: 500;
+      padding: 1.5rem 2rem;
+   }
+}

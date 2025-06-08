@@ -1,0 +1,119 @@
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+	z-index: 99;
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.modal {
+		--modal-width: 50rem;
+		--margin-top: 5rem;
+
+		position: relative;
+		width: auto;
+		max-width: var(--modal-width);
+		max-height: calc(100% - var(--margin-top) * 2);
+		margin-inline: auto;
+		margin-top: var(--margin-top);
+		display: flex;
+		flex-direction: column;
+		background: var(--white-color);
+		border-radius: 0.5rem;
+		user-select: none;
+		transform: translateY(-100%);
+		@include transition(transform);
+		&-s {
+			--modal-width: 30rem;
+		}
+		&-l {
+			--modal-width: 80rem;
+		}
+		&-xl {
+			--modal-width: 114rem;
+		}
+		&.open {
+			box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 12px;
+			transform: translateY(0%);
+		}
+
+		.btn-close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 1.5rem;
+			border: none;
+			border-radius: 50%;
+			background-color: var(--primary-color);
+			transform: translate(50%, -50%);
+			@include transition(background-color);
+			cursor: pointer;
+
+			&:hover {
+				background-color: var(--secondary-color-2);
+			}
+
+			&::before,
+			&::after {
+				position: absolute;
+				content: '';
+				height: 1.5rem;
+				width: 0.25rem;
+				background: #fff;
+				top: 50%;
+				left: 50%;
+			}
+			&::before {
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+			&::after {
+				transform: translate(-50%, -50%) rotate(-45deg);
+			}
+		}
+
+		&-body {
+			flex: 1;
+			padding: 1.5rem;
+			overflow-y: auto;
+		}
+	}
+}
+
+@include Desktop {
+	.overlay {
+		.modal {
+			&-xl {
+				--modal-width: 80rem;
+			}
+		}
+	}
+}
+
+@include Tablet {
+	.overlay {
+		.modal {
+			&-xl {
+				--modal-width: 50rem;
+			}
+		}
+	}
+}
+@include Mobile {
+	.overlay {
+		.modal {
+			margin-inline: 1rem;
+			&-xl {
+				--modal-width: 100%;
+			}
+		}
+	}
+}
