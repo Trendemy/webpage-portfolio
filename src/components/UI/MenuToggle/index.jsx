@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import { cn } from '~/utils';
 
-const MenuToggle = ({ active, style, onClick, ...props }) => {
+const MenuToggle = ({ active, className, style, onClick, ...props }) => {
     return (
         <button
             type='button'
-            className='w-8 h-5 flex flex-col justify-between bg-transparent cursor-pointer'
+            className={cn(
+                'w-8 h-5 flex flex-col justify-between bg-transparent cursor-pointer',
+                className
+            )}
             onClick={onClick}
             style={style}
             {...props}
@@ -31,6 +34,7 @@ const MenuToggle = ({ active, style, onClick, ...props }) => {
 
 MenuToggle.propTypes = {
     style: PropTypes.object,
+    className: PropTypes.string,
     active: PropTypes.bool,
     onClick: PropTypes.func
 };
