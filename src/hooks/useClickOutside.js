@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
  * useClickOutside Hook
@@ -9,18 +9,22 @@ import { useEffect } from 'react';
  * @param {Object} ref - A React ref pointing to the element to monitor.
  * @param {Function} callback - Function to execute when a click outside occurs.
  */
-const useClickOutside = (ref, callback) => {
-	useEffect(() => {
-		const handleClickOutside = (e) => {
-			if (ref.current && !ref.current.contains(e.target)) {
-				callback();
-			}
-		};
-		document.addEventListener('mousedown', handleClickOutside);
-		return () => {
-			document.removeEventListener('mousedown', handleClickOutside);
-		};
-	}, [ref, callback]);
+const useClickOutside = (callback) => {
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (ref.current && !ref.current.contains(e.target)) {
+                callback();
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [ref, callback]);
+
+    return { ref };
 };
 
 export default useClickOutside;

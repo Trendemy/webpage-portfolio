@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { API_KEY, PROJECT_ID } from './env';
+import { API_KEY, PROJECT_ID } from '~/config/env';
 
 /**
  * Initializes a Firebase application with the given configuration.
@@ -9,6 +9,6 @@ import { API_KEY, PROJECT_ID } from './env';
  * - `projectId: PROJECT_ID` → Unique identifier for the Firebase project.
  */
 export default initializeApp({
-	apiKey: API_KEY,
-	projectId: PROJECT_ID
+    apiKey: API_KEY,
+    projectId: PROJECT_ID
 });

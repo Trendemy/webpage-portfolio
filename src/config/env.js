@@ -1,4 +1,4 @@
-import { getEnv } from '@utils';
+import { getEnv } from '~/utils';
 
 const APP_NAME = getEnv('VITE_APP_NAME', 'Trendemy');
 const NODE_ENV = getEnv('VITE_NODE_ENV', 'production');
@@ -15,11 +15,11 @@ const PROJECT_ID = getEnv('VITE_PROJECT_ID');
 const CLOUDINARY_NAME = getEnv('VITE_CLOUDINARY_NAME');
 
 export {
-	APP_NAME,
-	NODE_ENV,
-	SHEET_DB_CONTACT,
-	SHEET_DB_REGISTER,
-	API_KEY,
-	PROJECT_ID,
-	CLOUDINARY_NAME,
+    APP_NAME,
+    NODE_ENV,
+    SHEET_DB_CONTACT,
+    SHEET_DB_REGISTER,
+    API_KEY,
+    PROJECT_ID,
+    CLOUDINARY_NAME
 };

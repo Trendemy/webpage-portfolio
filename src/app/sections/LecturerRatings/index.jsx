@@ -1,56 +1,46 @@
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
 import { Element } from 'react-scroll';
-import { sections } from '@data';
-import Feedbacks from '@components/Feedbacks';
+import { sections } from '~/data';
+import Feedbacks from '~/components/Feedbacks';
+import { Section } from '~/app/sections';
 import ArrowLine from './components/ArrowLine';
 import BrushStroke from './components/BrushStroke';
-import styles from './styles.module.scss';
 
-const cx = classNames.bind(styles);
-
-const LecturerRatings = ({ title, subtitle, data, animation }) => {
-   return (
-      <section className='py-5'>
-         <div className='container py-5' data-aos={animation}>
-            <Element className='row' name={sections.feedback.id}>
-               <div className='col-12 text-center mb-5'>
-                  {title && (
-                     <h2 className='heading-2 text-primary uppercase'>
-                        {title}
-                     </h2>
-                  )}
-                  {subtitle && <span className='subtitle'>{subtitle}</span>}
-               </div>
-               {Array.isArray(data) && data.length > 0 && (
-                  <div className='col-12'>
-                     <div className={cx('wrapper-feedbacks')}>
-                        <div className={cx('deco')}>
-                           <span className={cx('arrow-line')}>
-                              <ArrowLine />
-                           </span>
+const LecturerRatings = ({ title, data, animation }) => {
+    return (
+        <Section>
+            <div className='container' data-aos={animation}>
+                <Element
+                    className='flex flex-col gap-10'
+                    name={sections.feedback.id}
+                >
+                    {title && (
+                        <h2 className='heading-2 text-primary uppercase text-center'>
+                            {title}
+                        </h2>
+                    )}
+                    {Array.isArray(data) && data.length > 0 && (
+                        <div className='relative'>
+                            <div className='absolute w-[10%] top-0 left-0 hidden xl:flex text-secondary'>
+                                <ArrowLine className='shrink-0' />
+                            </div>
+                            <div className='xl:w-3/5 mx-auto'>
+                                <Feedbacks data={data} />
+                            </div>
+                            <div className='absolute w-[10%] right-0 bottom-0 hidden xl:flex text-secondary'>
+                                <BrushStroke className='shrink-0' />
+                            </div>
                         </div>
-                        <div className={cx('feedbacks')}>
-                           <Feedbacks data={data} />
-                        </div>
-                        <div className={cx('deco')}>
-                           <span className={cx('brush-stroke')}>
-                              <BrushStroke />
-                           </span>
-                        </div>
-                     </div>
-                  </div>
-               )}
-            </Element>
-         </div>
-      </section>
-   );
+                    )}
+                </Element>
+            </div>
+        </Section>
+    );
 };
 
 LecturerRatings.propTypes = {
-   title: PropTypes.string,
-   subtitle: PropTypes.string,
-   data: PropTypes.array,
-   animation: PropTypes.string
+    title: PropTypes.string,
+    data: PropTypes.array,
+    animation: PropTypes.string
 };
 export default LecturerRatings;

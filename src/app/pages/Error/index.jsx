@@ -1,18 +1,14 @@
 import { useRouteError } from 'react-router';
-import classNames from 'classnames/bind';
-import styles from './styles.module.scss';
-import { logger } from '@utils';
-
-const cx = classNames.bind(styles);
+import { logger } from '~/utils';
 
 const ErrorPage = () => {
-	const error = useRouteError();
-	logger('router error', error);
-	return (
-		<div className={cx('container')}>
-			<h3>404 | NOT FOUND</h3>
-		</div>
-	);
+    const error = useRouteError();
+    logger('router error', error);
+    return (
+        <div className='h-screen flex justify-center items-center'>
+            <h3 className='text-3xl font-black'>404 | NOT FOUND</h3>
+        </div>
+    );
 };
 
 export default ErrorPage;

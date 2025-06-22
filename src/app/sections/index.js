@@ -1,49 +1,51 @@
-import Banner from './Banner';
-import BannerLecturer from './BannerLecturer';
-import Base from './Base';
-import Benefits from './Benefits';
-import Contact from './Contact';
-import CoreValues from './CoreValues';
-import CourseHero from './CourseHero';
-import CourseContent from './CourseContent';
-import CourseIntroduction from './CourseIntroduction';
-import FAQ from './FAQ';
-import FeaturedCourses from './FeaturedCourses';
-import Goal from './Goal';
-import LecturerCourse from './LecturerCourse';
-import LecturerProfile from './LecturerProfile';
-import LecturerRatings from './LecturerRatings';
-import MissionVision from './MissionVision';
-import Reason from './Reason';
-import SpecialtySkills from './SpecialtySkills';
-import Statistics from './Statistics';
-import StudentFeedback from './StudentFeedback';
-import Summary from './Summary';
-import WhoShouldJoin from './WhoShouldJoin';
-import SliderSection from './SliderSection';
+import Section from '~/app/sections/Section';
+import HeroSection from '~/app/sections/HeroSection';
+import BannerLecturer from '~/app/sections/BannerLecturer';
+import BaseSection from '~/app/sections/BaseSection';
+import Benefits from '~/app/sections/Benefits';
+import ContactSection from '~/app/sections/ContactSection';
+import CoreValues from '~/app/sections/CoreValues';
+import BannerCourse from '~/app/sections/BannerCourse';
+import CourseContent from '~/app/sections/CourseContent';
+import CourseIntroduction from '~/app/sections/CourseIntroduction';
+import FAQSection from '~/app/sections/FAQSection';
+import CoursesSection from '~/app/sections/CoursesSection';
+import GoalSection from '~/app/sections/GoalSection';
+import LecturerCourse from '~/app/sections/LecturerCourse';
+import LecturerProfile from '~/app/sections/LecturerProfile';
+import LecturerRatings from '~/app/sections/LecturerRatings';
+import MissionVision from '~/app/sections/MissionVision';
+import ReasonSection from '~/app/sections/ReasonSection';
+import SpecialtySkills from '~/app/sections/SpecialtySkills';
+import Statistics from '~/app/sections/Statistics';
+import StudentFeedback from '~/app/sections/StudentFeedback';
+import Summary from '~/app/sections/Summary';
+import WhoShouldJoin from '~/app/sections/WhoShouldJoin';
+import SliderSection from '~/app/sections/SliderSection';
 
 export {
-   Banner,
-   BannerLecturer,
-   Base,
-   Benefits,
-   Contact,
-   CoreValues,
-   CourseHero,
-   CourseContent,
-   CourseIntroduction,
-   FAQ,
-   FeaturedCourses,
-   Goal,
-   LecturerCourse,
-   LecturerProfile,
-   LecturerRatings,
-   MissionVision,
-   Reason,
-   SpecialtySkills,
-   Statistics,
-   StudentFeedback,
-   Summary,
-   WhoShouldJoin,
-   SliderSection
+    Section,
+    HeroSection,
+    BannerLecturer,
+    BaseSection,
+    Benefits,
+    ContactSection,
+    CoreValues,
+    BannerCourse,
+    CourseContent,
+    CourseIntroduction,
+    FAQSection,
+    CoursesSection,
+    GoalSection,
+    LecturerCourse,
+    LecturerProfile,
+    LecturerRatings,
+    MissionVision,
+    ReasonSection,
+    SpecialtySkills,
+    Statistics,
+    StudentFeedback,
+    Summary,
+    WhoShouldJoin,
+    SliderSection
 };

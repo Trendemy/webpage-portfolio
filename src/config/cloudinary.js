@@ -1,5 +1,5 @@
 import { Cloudinary } from '@cloudinary/url-gen';
-import { CLOUDINARY_NAME } from './env';
+import { CLOUDINARY_NAME } from '~/config/env';
 
 /**
  * Initializes a Cloudinary instance for managing image uploads and transformations.
@@ -9,12 +9,12 @@ import { CLOUDINARY_NAME } from './env';
  * - `secure: true` → Ensures that all generated URLs use HTTPS for security.
  */
 const cloudinary = new Cloudinary({
-	cloud: {
-		cloudName: CLOUDINARY_NAME
-	},
-	url: {
-		secure: true
-	}
+    cloud: {
+        cloudName: CLOUDINARY_NAME
+    },
+    url: {
+        secure: true
+    }
 });
 
 export default cloudinary;

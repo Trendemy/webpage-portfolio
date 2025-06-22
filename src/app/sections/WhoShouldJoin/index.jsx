@@ -1,83 +1,76 @@
 import { Element } from 'react-scroll';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import { sections } from '@data';
-import { LazyImage } from '@components/UI';
-import Object from './components/Object';
+import { sections } from '~/data';
+import { Section } from '~/app/sections';
+import { Image } from '~/components/UI';
+import ObjectCard from './ObjectCard';
 import Arrow from './components/Arrow';
-import styles from './styles.module.scss';
-
-const cx = classNames.bind(styles);
 
 const WhoShouldJoin = ({ title, objects, images, animation }) => {
-   return (
-      <section className='py-5'>
-         <Element className='container' name={sections.join.id}>
-            <div className={cx('wrapper')} data-aos={animation}>
-               <div className={cx('box')}>
-                  <h2
-                     className={classNames(
-                        cx('title'),
-                        'heading-2 text-primary uppercase'
-                     )}
-                  >
-                     {title}
-                  </h2>
-                  <div className={cx('list')}>
-                     {Array.isArray(objects) &&
-                        objects.map((obj, index) => (
-                           <Object
-                              key={index}
-                              image={obj.image}
-                              name={obj.name}
-                              description={obj.description}
-                           />
-                        ))}
-                  </div>
-               </div>
-               <div className={cx('box')}>
-                  {Array.isArray(images) && (
-                     <div className={cx('gallery')}>
-                        {images?.[0] && (
-                           <div className={cx('frame', 'frame-1')}>
-                              <LazyImage
-                                 src={images[0]}
-                                 alt='Who Should Join'
-                                 className={cx('img-1')}
-                              />
-                           </div>
-                        )}
-                        {images?.[1] && (
-                           <div className={cx('frame')}>
-                              <LazyImage
-                                 src={images[1]}
-                                 alt='Who Should Join'
-                                 className={cx('img-2')}
-                              />
-                           </div>
-                        )}
-                        <span className={cx('arrow')}>
-                           <Arrow />
-                        </span>
-                     </div>
-                  )}
-               </div>
-            </div>
-         </Element>
-      </section>
-   );
+    return (
+        <Section>
+            <Element className='container' name={sections.join.id}>
+                <div
+                    className='flex flex-col xl:flex-row justify-center items-center xl:gap-0 gap-10'
+                    data-aos={animation}
+                >
+                    <div className='flex-1 flex flex-col gap-10'>
+                        <h2 className='heading-2 text-primary uppercase text-center xl:text-left'>
+                            {title}
+                        </h2>
+                        <div className='flex flex-col gap-10'>
+                            {Array.isArray(objects) &&
+                                objects.map((obj, index) => (
+                                    <ObjectCard
+                                        key={index}
+                                        image={obj.image}
+                                        name={obj.name}
+                                        description={obj.description}
+                                    />
+                                ))}
+                        </div>
+                    </div>
+                    {Array.isArray(images) && (
+                        <div className='flex-1 relative flex justify-center items-center'>
+                            {images?.[0] && (
+                                <div className='flex-1 flex xl:translate-20 translate-5 mt-auto'>
+                                    <Image
+                                        src={images[0]}
+                                        alt='Who Should Join'
+                                        className='rounded-2xl object-cover aspect-square'
+                                    />
+                                </div>
+                            )}
+                            {images?.[1] && (
+                                <div className='flex-1 flex -translate-x-5 xl:translate-0 -z-1'>
+                                    <Image
+                                        src={images[1]}
+                                        alt='Who Should Join'
+                                        className='rounded-2xl object-cover aspect-[1/1.5]'
+                                    />
+                                </div>
+                            )}
+                            <div className='absolute w-1/3 flex top-1/2 left-1/5 text-secondary -translate-y-full'>
+                                <Arrow className='shrink-0' />
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </Element>
+        </Section>
+    );
 };
 
 WhoShouldJoin.propTypes = {
-   title: PropTypes.string,
-   objects: PropTypes.arrayOf(
-      PropTypes.shape({
-         image: PropTypes.string.isRequired,
-         name: PropTypes.string.isRequired,
-         description: PropTypes.string.isRequired
-      })
-   ),
-   images: PropTypes.array,
-   animation: PropTypes.string
+    title: PropTypes.string,
+    objects: PropTypes.arrayOf(
+        PropTypes.shape({
+            image: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired
+        })
+    ),
+    images: PropTypes.array,
+    animation: PropTypes.string
 };
 export default WhoShouldJoin;

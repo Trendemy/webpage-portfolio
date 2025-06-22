@@ -1,6 +1,6 @@
-import { logger } from '@utils';
 import { useEffect, useReducer } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { logger } from '~/utils';
 
 /**
  * Reducer function to manage fetch state.
@@ -10,14 +10,14 @@ import { useNavigate, useParams } from 'react-router-dom';
  * @returns {Object} - Updated state based on the action type.
  */
 const reducer = (state, action) => {
-	switch (action.type) {
-		case 'SUCCESS':
-			return { loading: false, data: action.payload, error: null };
-		case 'ERROR':
-			return { loading: false, data: null, error: action.error };
-		default:
-			return state;
-	}
+    switch (action.type) {
+        case 'SUCCESS':
+            return { loading: false, data: action.payload, error: null };
+        case 'ERROR':
+            return { loading: false, data: null, error: action.error };
+        default:
+            return state;
+    }
 };
 
 /**
@@ -30,35 +30,32 @@ const reducer = (state, action) => {
  * @param {string} redirect - The path to redirect when data is not found or an error occurs.
  * @returns {Object} - Fetch state containing `{ loading, data, error }`.
  */
-const useFetch = (service, redirect = '/404') => {
-	const { slug } = useParams();
-	const navigate = useNavigate();
+const useFetch = (service) => {
+    const { slug } = useParams();
 
-	const [state, dispatch] = useReducer(reducer, {
-		loading: true,
-		data: null,
-		error: null
-	});
+    const [state, dispatch] = useReducer(reducer, {
+        loading: true,
+        data: null,
+        error: null
+    });
 
-	useEffect(() => {
-		(async () => {
-			try {
-				const data = await service.getOne({ slug });
-				if (data) {
-					dispatch({ type: 'SUCCESS', payload: data });
-				} else {
-					dispatch({ type: 'ERROR', error: 'Data not found' });
-					navigate(redirect, { replace: true });
-				}
-			} catch (error) {
-				logger('fetch error', error);
-				dispatch({ type: 'ERROR', error: error.message });
-				navigate(redirect, { replace: true });
-			}
-		})();
-	}, [navigate, redirect, service, slug]);
+    useEffect(() => {
+        (async () => {
+            try {
+                const data = await service.getOne({ slug });
+                if (data) {
+                    dispatch({ type: 'SUCCESS', payload: data });
+                } else {
+                    dispatch({ type: 'ERROR', error: 'Data not found' });
+                }
+            } catch (error) {
+                logger('fetch error', error);
+                dispatch({ type: 'ERROR', error: error.message });
+            }
+        })();
+    }, [service, slug]);
 
-	return state;
+    return state;
 };
 
 export default useFetch;

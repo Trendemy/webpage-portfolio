@@ -1,52 +1,44 @@
-import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
-import { LazyImage } from '@components/UI';
+import HighlightedUnderline from '~/app/sections/components/HighlightedUnderline';
+import { Image } from '~/components/UI';
 import BrushStroke from './components/BrushStroke';
-import HighlightedUnderline from '../components/HighlightedUnderline';
-import styles from './styles.module.scss';
-
-const cx = classNames.bind(styles);
 
 const BannerLecturer = ({ avatar, name, description }) => {
-   return (
-      <section className={cx('section')}>
-         <div className='container'>
-            <div className={cx('row')}>
-               <div className={classNames(cx('col', 'col-1'))}>
-                  <h1 className={'heading-1'}>Giảng viên</h1>
-                  <HighlightedUnderline
-                     as='h1'
-                     className={classNames(cx('heading'), 'heading-1')}
-                     title={name}
-                     highlight={name}
-                  />
-                  <p
-                     className={classNames(cx('description'), 'text-paragraph')}
-                  >
-                     {description}
-                  </p>
-               </div>
-               {avatar && (
-                  <div className={classNames(cx('col', 'col-2'))}>
-                     <span className={cx('brush-stroke')}>
-                        <BrushStroke />
-                     </span>
-                     <LazyImage
-                        src={avatar}
-                        alt='Giảng viên'
-                        className='w-100'
-                     />
-                  </div>
-               )}
+    return (
+        <section className='relative py-14 after:content after:absolute after:inset-0 after:bg-[url(/src/assets/images/banner-lecturer.webp)] after:bg-center after:bg-cover after:bg-no-repeat after:opacity-5 after:-z-1'>
+            <div className='container'>
+                <div className='flex flex-col xl:flex-row justify-center items-center xl:gap-20 gap-10'>
+                    <div className='flex-1 flex flex-col xl:items-start items-center'>
+                        <h1 className='heading-1 uppercase'>Giảng viên</h1>
+                        <HighlightedUnderline
+                            as='h1'
+                            className='heading-1 uppercase mb-5'
+                            title={name}
+                            highlight={name}
+                        />
+                        <p className='text-paragraph'>{description}</p>
+                    </div>
+                    {avatar && (
+                        <div className='flex-1 relative flex justify-center'>
+                            <div className='absolute flex w-4/5 bottom-0 right-0 text-secondary'>
+                                <BrushStroke className='shrink-0' />
+                            </div>
+                            <Image
+                                src={avatar}
+                                alt='Giảng viên'
+                                className='rounded-2xl aspect-[4/3] object-cover'
+                            />
+                        </div>
+                    )}
+                </div>
             </div>
-         </div>
-      </section>
-   );
+        </section>
+    );
 };
 
 BannerLecturer.propTypes = {
-   avatar: PropTypes.string.isRequired,
-   name: PropTypes.string.isRequired,
-   description: PropTypes.string.isRequired
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
 };
 export default BannerLecturer;

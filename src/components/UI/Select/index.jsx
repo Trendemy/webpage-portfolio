@@ -1,62 +1,58 @@
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import { ChevronDown } from '@components/Icons';
-import styles from './styles.module.scss';
-
-const cx = classNames.bind(styles);
+import { ChevronDown } from '~/components/Icons';
+import { cn } from '~/utils';
 
 const Select = ({
-	id,
-	name,
-	label,
-	value,
-
-	placeholder,
-	disabled,
-	onChange,
-	options = [],
-	...props
+    id,
+    name,
+    value,
+    placeholder,
+    disabled,
+    onChange,
+    options = [],
+    ...props
 }) => {
-	return (
-		<div className={cx('form-control')}>
-			{label && <label>{label}</label>}
-			<div className={cx('form-select')}>
-				<select
-					id={id}
-					name={name}
-					value={value}
-					onChange={onChange}
-					disabled={disabled}
-					{...props}
-				>
-					{placeholder && <option value=''>{placeholder}</option>}
-					{options.map((option) => (
-						<option key={option.value} value={option.value}>
-							{option.name}
-						</option>
-					))}
-				</select>
-				<span className={cx('icon')}>
-					<ChevronDown />
-				</span>
-			</div>
-		</div>
-	);
+    return (
+        <div className='relative'>
+            <select
+                id={id}
+                name={name}
+                value={value}
+                onChange={onChange}
+                disabled={disabled}
+                className={cn(
+                    'w-full appearance-none border border-primary text-base rounded-xl',
+                    'p-5 pr-12 bg-transparent outline-none',
+                    'text-ellipsis overflow-hidden'
+                )}
+                {...props}
+            >
+                {placeholder && <option value=''>{placeholder}</option>}
+                {options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.name}
+                    </option>
+                ))}
+            </select>
+            <div className='absolute top-1/2 right-4 flex -translate-y-1/2 pointer-events-none'>
+                <ChevronDown className='size-5 stroke-2 shrink-0' />
+            </div>
+        </div>
+    );
 };
 
 Select.propTypes = {
-	id: PropTypes.string,
-	label: PropTypes.string,
-	name: PropTypes.string,
-	placeholder: PropTypes.string,
-	value: PropTypes.string,
-	options: PropTypes.arrayOf(
-		PropTypes.shape({
-			name: PropTypes.string.isRequired,
-			value: PropTypes.string.isRequired,
-		})
-	).isRequired,
-	onChange: PropTypes.func,
-	disabled: PropTypes.bool,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
+    options: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            value: PropTypes.string.isRequired
+        })
+    ).isRequired,
+    onChange: PropTypes.func,
+    disabled: PropTypes.bool
 };
 export default Select;

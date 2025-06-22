@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { validator, logger } from '@utils';
+import { validator, logger } from '~/utils';
 
 /**
  * Custom hook for handling form submissions.
@@ -21,39 +21,39 @@ import { validator, logger } from '@utils';
  *   - `handleSubmit` (Function): Form submission handler.
  */
 const useFormSubmit = (
-	fields,
-	endpoint,
-	textLoading = 'Đang gửi...',
-	success = 'Thành công.',
-	error = 'Thất bại.'
+    fields,
+    endpoint,
+    textLoading = 'Đang gửi...',
+    success = 'Thành công.',
+    error = 'Thất bại.'
 ) => {
-	const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		if (loading) return;
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (loading) return;
 
-		const err = validator(fields);
-		if (err) {
-			toast.error(err);
-			return;
-		}
+        const err = validator(fields);
+        if (err) {
+            toast.error(err);
+            return;
+        }
 
-		try {
-			setLoading(true);
-			await toast.promise(axios.post(endpoint, fields), {
-				loading: textLoading,
-				success: success,
-				error: error
-			});
-		} catch (error) {
-			toast.error('Có lỗi!');
-			logger('submit error', error);
-		} finally {
-			setLoading(false);
-		}
-	};
-	return { loading, handleSubmit };
+        try {
+            setLoading(true);
+            await toast.promise(axios.post(endpoint, fields), {
+                loading: textLoading,
+                success: success,
+                error: error
+            });
+        } catch (error) {
+            toast.error('Có lỗi!');
+            logger('submit error', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+    return { loading, handleSubmit };
 };
 
 export default useFormSubmit;

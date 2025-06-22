@@ -1,4 +1,4 @@
-import teacherService from './TeacherService';
-import courseService from './CourseService';
+import teacherService from '~/services/TeacherService';
+import courseService from '~/services/CourseService';
 
 export { teacherService, courseService };

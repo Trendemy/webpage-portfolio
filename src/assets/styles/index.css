@@ -1,47 +1,48 @@
-:root {
-   --primary-font: 'Roboto', sans-serif;
-   --footer-bg: #151c1b;
-   --primary-color: #0fc8a9;
-   --secondary-color: #ef6e20;
-   --secondary-color-2: #086e5d;
-   --text-color: #03110f;
-   --white-color: #fff;
-   --dark-color: #333;
+@import 'tailwindcss';
+@import './vendor.css';
+@import './animations.css';
 
-   font-synthesis: none;
-   text-rendering: optimizeLegibility;
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
+@theme {
+    --font-sans: 'Roboto', sans-serif;
+    --color-primary: #0fc8a9;
+    --color-secondary: #ef6e20;
+    --color-secondary-2: #086e5d;
+    --color-footer: #151c1b;
+    --animate-gradient: gradientAnimation 3s ease infinite;
 }
 
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
-
-html {
-   font-size: 62.5%;
-}
-
-body {
-   font-family: var(--primary-font);
-   font-size: 1.6rem;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-   font-family: inherit;
-}
-
-button {
-   outline: none;
-   border: none;
-}
-
-ul {
-   list-style: none;
+@layer components {
+    .container {
+        @apply mx-auto px-8;
+    }
+    .text-brand {
+        @apply bg-gradient-to-r from-blue-400 to-teal-300 bg-clip-text text-transparent;
+    }
+    .dropdown > .dropdown-content {
+        @apply invisible opacity-0 scale-95 transition;
+    }
+    .dropdown:hover > .dropdown-content {
+        @apply visible opacity-100 scale-100;
+    }
+    .heading-1 {
+        @apply text-[36px] leading-tight xl:text-[56px] xl:leading-snug font-medium;
+    }
+    .heading-2 {
+        @apply text-[29px] leading-tight xl:text-[40px] xl:leading-snug font-medium;
+    }
+    .heading-3 {
+        @apply text-[24px] xl:text-[34px] font-medium;
+    }
+    .heading-4 {
+        @apply text-[24px] font-medium;
+    }
+    .text-paragraph {
+        @apply text-sm lg:text-base text-justify;
+    }
+    .icon-size {
+        @apply size-10 md:size-12 lg:size-14 xl:size-16;
+    }
+    .circle-glow {
+        @apply absolute top-1/2 left-0 h-1/2 rounded-full aspect-square opacity-50 select-none pointer-events-none -z-10 shadow-[200px_0_99999px_0_var(--color-primary)] -translate-x-full -translate-y-1/2;
+    }
 }

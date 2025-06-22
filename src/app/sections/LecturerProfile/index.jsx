@@ -1,50 +1,54 @@
 import { Element } from 'react-scroll';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import { sections } from '@data';
-import { LazyImage } from '@components/UI';
-import { ZigzagArrow } from '@components/Icons';
+import { sections } from '~/data';
+import { Image } from '~/components/UI';
+import { ZigzagArrow } from '~/components/Icons';
+import { Section } from '~/app/sections';
+import HighlightedUnderline from '~/app/sections/components/HighlightedUnderline';
 import BrushStroke from './components/BrushStroke';
-import HighlightedUnderline from '../components/HighlightedUnderline';
-import styles from './styles.module.scss';
-
-const cx = classNames.bind(styles);
 
 const LecturerProfile = ({ avatar, title, description, animation }) => {
-   return (
-      <section className='relative overflow-hidden py-5'>
-         <div className='circle-glow' />
-         <Element className='container' name={sections.introduction.id}>
-            <div className={cx('row')} data-aos={animation}>
-               <div className={cx('col', 'col-1')}>
-                  <div className={cx('gallery')}>
-                     <span className={cx('deco', 'brush-stroke')}>
-                        <BrushStroke />
-                     </span>
-                     {avatar && <LazyImage src={avatar} alt='Lecturer' />}
-                  </div>
-               </div>
-               <div className={cx('col', 'col-2')}>
-                  <span className={cx('deco', 'zigzag')}>
-                     <ZigzagArrow />
-                  </span>
-                  <HighlightedUnderline
-                     as='h2'
-                     className={classNames(cx('title'), 'heading-2')}
-                     title={title}
-                     highlight={title}
-                  />
-                  <p className='text-paragraph'>{description}</p>
-               </div>
-            </div>
-         </Element>
-      </section>
-   );
+    return (
+        <Section className='relative overflow-hidden'>
+            <div className='circle-glow' />
+            <Element className='container' name={sections.introduction.id}>
+                <div
+                    className='relative flex flex-col-reverse xl:flex-row justify-center items-center xl:gap-20 gap-10'
+                    data-aos={animation}
+                >
+                    <div className='flex-1 relative flex'>
+                        <div className='absolute flex w-3/4 bottom-0 right-0 text-secondary'>
+                            <BrushStroke className='shrink-0' />
+                        </div>
+                        {avatar && (
+                            <Image
+                                src={avatar}
+                                alt='Lecturer'
+                                className='rounded-full object-cover aspect-square'
+                            />
+                        )}
+                    </div>
+                    <div className='flex-1'>
+                        <HighlightedUnderline
+                            as='h2'
+                            className='heading-2 uppercase text-center xl:text-left mb-5 mt-20 xl:mt-0'
+                            title={title}
+                            highlight={title}
+                        />
+                        <p className='text-paragraph'>{description}</p>
+                    </div>
+                    <div className='absolute flex xl:w-32 w-20 top-0 xl:right-1/5 right-2/5 text-secondary'>
+                        <ZigzagArrow className='shrink-0' />
+                    </div>
+                </div>
+            </Element>
+        </Section>
+    );
 };
 LecturerProfile.propTypes = {
-   avatar: PropTypes.string,
-   title: PropTypes.string,
-   description: PropTypes.string,
-   animation: PropTypes.string
+    avatar: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    animation: PropTypes.string
 };
 export default LecturerProfile;

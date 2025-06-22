@@ -1,4 +1,5 @@
-import { NODE_ENV } from '@config/env';
+import { NODE_ENV } from '~/config/env';
+
 /**
  * Logs messages to the console based on the environment.
  * - In `development`, logs the message and optional context.
@@ -13,15 +14,15 @@ import { NODE_ENV } from '@config/env';
  * // Logs in development: "Server started", { port: 3000 }
  */
 const logger = (message, context = {}) => {
-	switch (NODE_ENV) {
-		case 'development':
-			console.log(message, context);
-			break;
-		case 'production':
-			break;
-		default:
-			break;
-	}
+    switch (NODE_ENV) {
+        case 'development':
+            console.log(message, context);
+            break;
+        case 'production':
+            break;
+        default:
+            break;
+    }
 };
 
 export default logger;

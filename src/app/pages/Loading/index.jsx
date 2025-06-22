@@ -1,15 +1,13 @@
-import classNames from 'classnames/bind';
-import { APP_NAME } from '@config/env';
-import styles from './styles.module.scss';
-
-const cx = classNames.bind(styles);
+import { APP_NAME } from '~/config/env';
 
 const LoadingPage = () => {
-	return (
-		<div className={cx('loading-page')}>
-			<span className={cx('app-name')}>{APP_NAME}</span>
-		</div>
-	);
+    return (
+        <div className='w-full h-screen flex justify-center items-center bg-white -mt-[130px]'>
+            <span className='text-3xl font-black uppercase bg-gradient-to-r from-[#4799e9] via-[#65f4cd] to-[#ff4ecd] bg-[length:300%_100%] bg-clip-text text-transparent animate-gradient'>
+                {APP_NAME}
+            </span>
+        </div>
+    );
 };
 
 export default LoadingPage;
