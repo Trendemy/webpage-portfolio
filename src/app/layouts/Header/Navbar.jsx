@@ -85,7 +85,6 @@ const Navbar = ({ routes = [] }) => {
                     </ul>
                     <div className='xl:hidden'>
                         <MenuToggle
-                            primary
                             active={openNav}
                             onClick={() => setOpenNav((o) => !o)}
                         />
