@@ -34,6 +34,17 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
+    - name: Create env file
+      run: |
+        echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> .env
+        echo "VITE_PROJECT_ID=${{ vars.VITE_PROJECT_ID }}" >> .env
+        echo "VITE_APP_NAME=${{ vars.VITE_APP_NAME }}" >> .env
+        echo "VITE_SHEET_DB_CONTACT=${{ vars.VITE_SHEET_DB_CONTACT }}" >> .env
+        echo "VITE_SHEET_DB_REGISTER=${{ vars.VITE_SHEET_DB_REGISTER }}" >> .env
+        echo "VITE_CLOUDINARY_NAME=${{ vars.VITE_CLOUDINARY_NAME }}" >> .env
+        echo "VITE_APP_ENV=production" >> .env
+        cat .env
+
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
