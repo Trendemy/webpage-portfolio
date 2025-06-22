@@ -27,7 +27,7 @@ const MissionVision = ({
                                 alt='image vision'
                                 className='w-10/12 xl:w-full rounded-xl'
                             />
-                            <div className='absolute w-30 h-15 bottom-0 right-0 bg-secondary rounded-t-full rotate-45 translate-x-1/2' />
+                            <div className='absolute w-20 h-10 xl:w-30 xl:h-15 bottom-0 right-0 bg-secondary rounded-t-full rotate-45 translate-x-0 xl:translate-x-1/2' />
                         </div>
                     </div>
                     <div className='flex flex-col xl:flex-row-reverse justify-center items-center xl:gap-20 gap-5'>
@@ -43,7 +43,7 @@ const MissionVision = ({
                                 alt='mission'
                                 className='w-10/12 xl:w-full rounded-xl'
                             />
-                            <div className='absolute w-30 h-15 bottom-0 left-0 bg-secondary rounded-b-full rotate-45 -translate-x-1/2 translate-y-1/2' />
+                            <div className='absolute w-20 h-10 xl:w-30 xl:h-15 bottom-0 left-0 bg-secondary rounded-b-full rotate-45 translate-0 xl:-translate-x-1/2 xl:translate-y-1/2' />
                         </div>
                     </div>
                 </div>
