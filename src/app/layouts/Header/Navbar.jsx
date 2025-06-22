@@ -83,7 +83,7 @@ const Navbar = ({ routes = [] }) => {
                             />
                         </li>
                     </ul>
-                    <div className='flex xl:hidden'>
+                    <div className='xl:hidden'>
                         <MenuToggle
                             active={openNav}
                             onClick={() => setOpenNav((o) => !o)}
