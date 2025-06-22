@@ -5,7 +5,7 @@ const MenuToggle = ({ primary = false, active, onClick, ...props }) => {
     return (
         <button
             type='button'
-            className='w-8 h-5 flex flex-col justify-between bg-transparent cursor-pointer'
+            className='w-8 h-5 shrink-0 flex flex-col justify-between bg-transparent cursor-pointer'
             onClick={onClick}
             {...props}
         >
