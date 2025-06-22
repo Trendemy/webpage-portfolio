@@ -14,19 +14,28 @@ const MenuToggle = ({ active, className, style, onClick, ...props }) => {
             {...props}
         >
             <span
-                className={cn('h-1 bg-primary duration-200 rounded-full', {
-                    'bg-secondary-2 translate-y-2 -rotate-45': active
-                })}
+                className={cn(
+                    'w-full h-1 bg-primary duration-200 rounded-full',
+                    {
+                        'bg-secondary-2 translate-y-2 -rotate-45': active
+                    }
+                )}
             />
             <span
-                className={cn('h-1 bg-primary duration-200 rounded-full', {
-                    'bg-secondary-2 opacity-0': active
-                })}
+                className={cn(
+                    'w-full h-1 bg-primary duration-200 rounded-full',
+                    {
+                        'bg-secondary-2 opacity-0': active
+                    }
+                )}
             />
             <span
-                className={cn('h-1 bg-primary duration-200 rounded-full', {
-                    'bg-secondary-2 -translate-y-2 rotate-45': active
-                })}
+                className={cn(
+                    'w-full h-1 bg-primary duration-200 rounded-full',
+                    {
+                        'bg-secondary-2 -translate-y-2 rotate-45': active
+                    }
+                )}
             />
         </button>
     );
