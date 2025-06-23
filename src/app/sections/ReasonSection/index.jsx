@@ -29,15 +29,15 @@ const ReasonSection = ({
                                 return (
                                     <div
                                         key={index}
-                                        className='flex items-center gap-3'
+                                        className='flex items-center'
                                     >
-                                        <div className='size-4 flex text-primary'>
+                                        <div className='size-4 flex text-primary mr-3'>
                                             <CheckCircle className='shrink-0' />
                                         </div>
-                                        <span className='text-paragraph'>
+                                        <p className='text-paragraph'>
                                             <strong>{strings[0]}:</strong>
                                             {strings[1] ? ` ${strings[1]}` : ''}
-                                        </span>
+                                        </p>
                                     </div>
                                 );
                             })}
