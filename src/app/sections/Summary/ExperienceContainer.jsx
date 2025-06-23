@@ -17,7 +17,7 @@ const ExperienceContainer = ({ title, data, animation }) => {
                             {images.map((src, index) => (
                                 <div
                                     key={index}
-                                    className='h-5 md:h-8 xl:h-12 flex transition hover:scale-150 transform-gpu'
+                                    className='h-5 md:h-8 xl:h-12 flex'
                                 >
                                     <Image src={src} className='object-cover' />
                                 </div>
