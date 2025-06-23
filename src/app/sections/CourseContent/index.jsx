@@ -36,7 +36,7 @@ const CourseContent = ({ title, subtitle, data = [], animation }) => {
             <div className='absolute inset-0 xl:w-4/5 xl:left-1/2 xl:inset-y-0 bg-primary xl:-translate-x-1/2' />
             <div className='container' data-aos={animation}>
                 <div className='flex justify-center items-center gap-3 mb-10'>
-                    <h2 className='w-fit heading-2 text-white bg-secondary rounded-xl px-2 py-1'>
+                    <h2 className='w-fit heading-2 text-white bg-secondary text-center rounded-xl px-2 py-1'>
                         {title}
                     </h2>
                     <p className='subtitle text-white'>{subtitle}</p>
