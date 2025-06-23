@@ -21,12 +21,9 @@ const GoalSection = ({ title = '', data = [], images = [], animation }) => {
                         <div className='border border-gray-400 border-dashed' />
                         <ul className='flex flex-col gap-5'>
                             {data.map((text, index) => (
-                                <li
-                                    key={index}
-                                    className='flex items-center gap-3'
-                                >
-                                    <div className='size-5 flex text-primary'>
-                                        <CheckCircle className='shrink-0' />
+                                <li key={index} className='flex items-center'>
+                                    <div className='flex mr-3'>
+                                        <CheckCircle className='size-4 xl:size-5 shrink-0 text-primary' />
                                     </div>
                                     <p className='text-paragraph'>{text}</p>
                                 </li>

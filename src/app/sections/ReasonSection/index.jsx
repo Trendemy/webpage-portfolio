@@ -32,7 +32,7 @@ const ReasonSection = ({
                                         className='flex items-center'
                                     >
                                         <div className='flex mr-3'>
-                                            <CheckCircle className='size-4 shrink-0 text-primary' />
+                                            <CheckCircle className='size-4 xl:size-5 shrink-0 text-primary' />
                                         </div>
                                         <p className='text-paragraph'>
                                             <strong>{strings[0]}:</strong>
