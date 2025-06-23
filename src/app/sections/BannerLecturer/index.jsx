@@ -21,7 +21,7 @@ const BannerLecturer = ({ avatar, name, description }) => {
                     {avatar && (
                         <div className='flex-1 relative flex justify-center'>
                             <div className='absolute flex w-4/5 bottom-0 right-0 text-secondary'>
-                                <BrushStroke className='shrink-0' />
+                                <BrushStroke className='w-full shrink-0' />
                             </div>
                             <Image
                                 src={avatar}
