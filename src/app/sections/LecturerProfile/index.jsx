@@ -18,7 +18,7 @@ const LecturerProfile = ({ avatar, title, description, animation }) => {
                 >
                     <div className='flex-1 relative flex'>
                         <div className='absolute flex w-3/4 bottom-0 right-0 text-secondary'>
-                            <BrushStroke className='shrink-0' />
+                            <BrushStroke className='w-full shrink-0' />
                         </div>
                         {avatar && (
                             <Image
@@ -38,7 +38,7 @@ const LecturerProfile = ({ avatar, title, description, animation }) => {
                         <p className='text-paragraph'>{description}</p>
                     </div>
                     <div className='absolute flex xl:w-32 w-20 top-0 xl:right-1/5 right-2/5 text-secondary'>
-                        <ZigzagArrow className='shrink-0' />
+                        <ZigzagArrow className='w-full shrink-0' />
                     </div>
                 </div>
             </Element>
