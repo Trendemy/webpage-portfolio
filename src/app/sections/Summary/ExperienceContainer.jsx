@@ -19,7 +19,10 @@ const ExperienceContainer = ({ title, data, animation }) => {
                                     key={index}
                                     className='w-fit h-5 md:h-8 xl:h-12 flex transition hover:scale-150'
                                 >
-                                    <Image src={src} className='object-cover' />
+                                    <Image
+                                        src={src}
+                                        className='h-full object-cover'
+                                    />
                                 </div>
                             ))}
                         </div>
