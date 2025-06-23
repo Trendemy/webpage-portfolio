@@ -13,7 +13,7 @@ const ExperienceContainer = ({ title, data, animation }) => {
                     >
                         <h4 className='heading-4 text-center my-5'>{title}</h4>
                         <div className='w-4/5 border-t border-gray-400 border-dashed mx-auto' />
-                        <div className='flex flex-wrap justify-center gap-5 xl:gap-10 my-5'>
+                        <div className='flex justify-center gap-5 xl:gap-10 my-5'>
                             {images.map((src, index) => (
                                 <div
                                     key={index}
