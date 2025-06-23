@@ -16,7 +16,7 @@ const Chapter = ({ title, content, isShow, onToggle }) => {
                 <h3 className='heading-4 text-primary'>{title}</h3>
                 <div
                     className={cn(
-                        'size-8 rounded-full bg-primary text-white flex justify-center items-center transition',
+                        'size-8 shrink-0 rounded-full bg-primary text-white flex justify-center items-center transition',
                         {
                             'rotate-45 bg-secondary-2': isShow
                         }
