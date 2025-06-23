@@ -51,7 +51,7 @@ const WhoShouldJoin = ({ title, objects, images, animation }) => {
                                 </div>
                             )}
                             <div className='absolute w-1/3 flex top-1/2 left-1/5 text-secondary -translate-y-full'>
-                                <Arrow className='shrink-0' />
+                                <Arrow className='w-full shrink-0' />
                             </div>
                         </div>
                     )}

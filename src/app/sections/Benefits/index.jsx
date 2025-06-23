@@ -16,8 +16,8 @@ const Benefits = ({ title, data = [], images = [], animation }) => {
                 >
                     {Array.isArray(images) && (
                         <div className='flex-1 relative flex gap-5'>
-                            <div className='absolute'>
-                                <BrushStroke />
+                            <div className='absolute w-4/6 right-0 bottom-0 flex text-secondary translate-y-10'>
+                                <BrushStroke className='w-full shrink-0' />
                             </div>
                             {images?.[0] && (
                                 <div className='flex-1 flex'>

@@ -46,9 +46,9 @@ const GoalSection = ({ title = '', data = [], images = [], animation }) => {
                                     className='aspect-square rounded-xl object-cover'
                                 />
                             </div>
-                            <span className='absolute w-3/5 bottom-0 flex text-secondary'>
-                                <BrushStroke />
-                            </span>
+                            <div className='absolute w-3/5 bottom-0 flex text-secondary'>
+                                <BrushStroke className='w-full shrink-0' />
+                            </div>
                         </div>
                     )}
                 </div>

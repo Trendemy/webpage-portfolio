@@ -23,7 +23,7 @@ const StudentFeedback = ({
                     {Array.isArray(images) && images.length > 0 && (
                         <div className='flex-1 relative flex gap-5'>
                             <div className='flex absolute w-4/5 bottom-0 left-1/2 -translate-x-1/2'>
-                                <Swoosh className='shrink-0' />
+                                <Swoosh className='w-full shrink-0' />
                             </div>
                             {images?.[0] && (
                                 <div className='flex-1 flex'>
