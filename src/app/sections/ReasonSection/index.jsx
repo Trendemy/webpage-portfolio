@@ -31,8 +31,8 @@ const ReasonSection = ({
                                         key={index}
                                         className='flex items-center'
                                     >
-                                        <div className='size-4 flex text-primary mr-3'>
-                                            <CheckCircle className='shrink-0' />
+                                        <div className='flex mr-3'>
+                                            <CheckCircle className='size-4 shrink-0 text-primary' />
                                         </div>
                                         <p className='text-paragraph'>
                                             <strong>{strings[0]}:</strong>
