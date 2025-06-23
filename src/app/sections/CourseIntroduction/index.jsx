@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Element } from 'react-scroll';
 import { sections } from '~/data';
-import HighlightedUnderline from '~/app/sections/components/HighlightedUnderline';
+import HighlightTitle from '~/app/sections/components/HighlightTitle';
 import { Section } from '~/app/sections';
 import { Image } from '~/components/UI';
 import { ZigzagArrow } from '~/components/Icons';
@@ -49,12 +49,14 @@ const CourseIntroduction = ({
                         <span className='absolute flex'>
                             <ZigzagArrow className='shrink-0' />
                         </span>
-                        <HighlightedUnderline
+                        <HighlightTitle
+                            as='h3'
                             title={title}
                             highlight={highlightTitle}
                             className='heading-2 uppercase text-center xl:text-left'
-                            as='h3'
-                        />
+                        >
+                            <HighlightTitle.Underline />
+                        </HighlightTitle>
                         <p className='text-paragraph'>{description}</p>
                     </div>
                 </div>

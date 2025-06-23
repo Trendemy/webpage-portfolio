@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import HighlightedUnderline from '~/app/sections/components/HighlightedUnderline';
+import HighlightTitle from '~/app/sections/components/HighlightTitle';
 import { Image } from '~/components/UI';
 import BrushStroke from './components/BrushStroke';
 
@@ -10,12 +10,14 @@ const BannerLecturer = ({ avatar, name, description }) => {
                 <div className='flex flex-col xl:flex-row justify-center items-center xl:gap-20 gap-10'>
                     <div className='flex-1 flex flex-col xl:items-start items-center'>
                         <h1 className='heading-1 uppercase'>Giảng viên</h1>
-                        <HighlightedUnderline
+                        <HighlightTitle
                             as='h1'
                             className='heading-1 uppercase mb-5'
                             title={name}
                             highlight={name}
-                        />
+                        >
+                            <HighlightTitle.Underline className='translate-y-4/5' />
+                        </HighlightTitle>
                         <p className='text-paragraph'>{description}</p>
                     </div>
                     {avatar && (

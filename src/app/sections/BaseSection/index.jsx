@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Element } from 'react-scroll';
 import { sections } from '~/data';
 import { Section } from '~/app/sections';
-import HighlightedUnderline from '~/app/sections/components/HighlightedUnderline';
+import HighlightTitle from '~/app/sections/components/HighlightTitle';
 import { Image } from '~/components/UI';
 import { ArrowLine, Signal } from '~/components/Icons';
 
@@ -44,12 +44,14 @@ const BaseSection = ({
                         </div>
                     </div>
                     <div className='flex-1'>
-                        <HighlightedUnderline
+                        <HighlightTitle
                             as='h2'
                             className='heading-2 uppercase text-center xl:text-left'
                             title={title}
                             highlight={highlightTitle}
-                        />
+                        >
+                            <HighlightTitle.Underline />
+                        </HighlightTitle>
                         <p className='text-paragraph'>{description}</p>
                     </div>
                 </div>

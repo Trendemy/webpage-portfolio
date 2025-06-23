@@ -4,7 +4,7 @@ import { sections } from '~/data';
 import { Image } from '~/components/UI';
 import { ZigzagArrow } from '~/components/Icons';
 import { Section } from '~/app/sections';
-import HighlightedUnderline from '~/app/sections/components/HighlightedUnderline';
+import HighlightTitle from '~/app/sections/components/HighlightTitle';
 import BrushStroke from './components/BrushStroke';
 
 const LecturerProfile = ({ avatar, title, description, animation }) => {
@@ -29,12 +29,14 @@ const LecturerProfile = ({ avatar, title, description, animation }) => {
                         )}
                     </div>
                     <div className='flex-1'>
-                        <HighlightedUnderline
+                        <HighlightTitle
                             as='h2'
                             className='heading-2 uppercase text-center xl:text-left mb-5 mt-20 xl:mt-0'
                             title={title}
                             highlight={title}
-                        />
+                        >
+                            <HighlightTitle.Underline className='translate-y-4/5' />
+                        </HighlightTitle>
                         <p className='text-paragraph'>{description}</p>
                     </div>
                     <div className='absolute flex xl:w-32 w-20 top-0 xl:right-1/5 right-2/5 text-secondary'>

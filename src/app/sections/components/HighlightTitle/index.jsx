@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
-import { Underline } from '~/components/Icons';
 import { APP_NAME } from '~/config/env';
+import { Underline as UnderlineIcon } from '~/components/Icons';
+import { cn } from '~/utils';
 
-const HighlightedUnderline = ({
+const HighlightTitle = ({
+    as: Tag,
     title,
     highlight = '',
     className,
-    as: Tag
+    children
 }) => {
     const parts = highlight
         ? title.split(new RegExp(`(${highlight})`, 'gi'))
@@ -42,11 +44,7 @@ const HighlightedUnderline = ({
                             );
                         })}
 
-                        {isExactHighlight && (
-                            <div className='absolute inset-x-0 bottom-0 flex justify-center items-center text-secondary translate-y-4/5'>
-                                <Underline className='size-full shrink-0' />
-                            </div>
-                        )}
+                        {isExactHighlight && children}
                     </span>
                 );
             })}
@@ -54,10 +52,28 @@ const HighlightedUnderline = ({
     );
 };
 
-HighlightedUnderline.propTypes = {
+const Underline = ({ className }) => {
+    return (
+        <div
+            className={cn(
+                'absolute inset-x-0 bottom-0 flex justify-center items-center text-secondary',
+                className
+            )}
+        >
+            <UnderlineIcon className='w-full shrink-0' />
+        </div>
+    );
+};
+HighlightTitle.Underline = Underline;
+
+Underline.propTypes = {
+    className: PropTypes.string
+};
+HighlightTitle.propTypes = {
     as: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     highlight: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    children: PropTypes.node
 };
-export default HighlightedUnderline;
+export default HighlightTitle;

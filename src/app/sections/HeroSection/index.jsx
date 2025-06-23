@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Image } from '~/components/UI';
 import { Register } from '~/components/ModalForm';
-import HighlightedUnderline from '~/app/sections/components/HighlightedUnderline';
+import HighlightTitle from '~/app/sections/components/HighlightTitle';
 import Tag from './components/Tag';
 import { Course, Flower, Hexagon, Octagram, Student } from '~/components/Icons';
 
@@ -28,12 +28,14 @@ const HeroSection = ({
             <div className='container'>
                 <div className='flex flex-col xl:flex-row justify-center items-center'>
                     <div className='flex-1 xl:mt-0 mt-3'>
-                        <HighlightedUnderline
+                        <HighlightTitle
                             as='h1'
                             className='heading-1 uppercase text-center xl:text-left'
                             title={title}
                             highlight={highlightTitle}
-                        />
+                        >
+                            <HighlightTitle.Underline />
+                        </HighlightTitle>
                         <p className='text-paragraph'>{description}</p>
                         <div className='flex xl:justify-start justify-center mt-3'>
                             <Button primary onClick={() => setOpenForm(true)}>

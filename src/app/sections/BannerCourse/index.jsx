@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Register } from '~/components/ModalForm';
-import HighlightedUnderline from '~/app/sections/components/HighlightedUnderline';
+import HighlightTitle from '~/app/sections/components/HighlightTitle';
 import { Button, Image } from '~/components/UI';
 import { Hexagon, Octagram } from '~/components/Icons';
 
@@ -24,12 +24,14 @@ const BannerCourse = ({
             <div className='container'>
                 <div className='flex flex-col xl:flex-row justify-center items-center xl:gap-20 gap-10'>
                     <div className='flex-1'>
-                        <HighlightedUnderline
+                        <HighlightTitle
                             as='h1'
                             title={title}
                             highlight={highlightTitle}
                             className='heading-1 uppercase text-center xl:text-left'
-                        />
+                        >
+                            <HighlightTitle.Underline />
+                        </HighlightTitle>
                         <p className='text-paragraph'>{description}</p>
                         <div className='text-center xl:text-left mt-3'>
                             <Button primary onClick={() => setOpenForm(true)}>
