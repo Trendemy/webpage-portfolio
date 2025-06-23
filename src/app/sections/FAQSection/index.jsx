@@ -29,7 +29,7 @@ const FAQSection = ({ title = '', questions = [], images = [], animation }) => {
                             ))}
                         </div>
                     </div>
-                    <div className='relative flex-1 flex before:content after:content before:absolute after:absolute before:size-1/5 after:size-1/3 before:bg-secondary after:bg-secondary before:top-1/2 after:right-0 after:bottom-0 after:translate-y-16 before:-z-1 after:-z-1'>
+                    <div className='relative flex-1 flex before:content after:content before:absolute after:absolute before:size-1/5 after:size-1/3 before:bg-secondary after:bg-secondary before:top-1/2 after:right-0 after:bottom-0 after:translate-y-1/4 before:-z-1 after:-z-1'>
                         <div className='flex-1 flex justify-center'>
                             <Image
                                 src={images[0]}
