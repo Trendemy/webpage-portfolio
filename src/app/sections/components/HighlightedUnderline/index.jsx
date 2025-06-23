@@ -43,9 +43,9 @@ const HighlightedUnderline = ({
                         })}
 
                         {isExactHighlight && (
-                            <span className='absolute inset-x-0 bottom-0 flex justify-center items-center text-secondary translate-y-4/5'>
-                                <Underline className='shrink-0' />
-                            </span>
+                            <div className='absolute inset-x-0 bottom-0 flex justify-center items-center text-secondary translate-y-4/5'>
+                                <Underline className='size-full shrink-0' />
+                            </div>
                         )}
                     </span>
                 );
