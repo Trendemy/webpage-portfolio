@@ -27,7 +27,7 @@ const HeroSection = ({
             </div>
             <div className='container'>
                 <div className='flex flex-col xl:flex-row justify-center items-center'>
-                    <div className='flex-1 xl:mt-0 mt-3'>
+                    <div className='flex-1 2xl:mt-0 xl:mt-12 mt-3'>
                         <HighlightTitle
                             as='h1'
                             className='heading-1 uppercase text-center xl:text-left'

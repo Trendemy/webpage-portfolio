@@ -21,7 +21,7 @@ const BaseSection = ({
                     className='flex flex-col-reverse xl:flex-row justify-center items-center xl:gap-20 gap-10'
                     data-aos={animation}
                 >
-                    <div className='absolute bottom-1/6 left-3/4 flex icon-size text-secondary'>
+                    <div className='absolute 2xl:bottom-1/6 bottom-0 left-3/4 flex icon-size text-secondary'>
                         <Signal className='shrink-0' />
                     </div>
                     <div className='relative flex-1'>
@@ -46,7 +46,7 @@ const BaseSection = ({
                     <div className='flex-1'>
                         <HighlightTitle
                             as='h2'
-                            className='heading-2 uppercase text-center xl:text-left'
+                            className='heading-2 uppercase text-center xl:text-left mb-3'
                             title={title}
                             highlight={highlightTitle}
                         >
