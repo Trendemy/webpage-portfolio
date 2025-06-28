@@ -30,7 +30,7 @@ const Statistics = ({ data = [], duration = 5 }) => {
                     <div className='absolute top-12 xl:top-1/2 xl:left-0 w-full xl:w-24 h-[1px] bg-white xl:-translate-y-1/2' />
                     <div className='absolute top-0 xl:top-1/2 left-1/2 xl:left-16 w-[1px] h-20 xl:h-3/4 bg-white xl:-translate-y-1/2 -translate-x-1/2 xl:translate-x-0' />
                     <div className='container'>
-                        <div className='flex flex-col xl:flex-row justify-between items-center xl:gap-0 gap-30'>
+                        <div className='flex flex-col xl:flex-row justify-around items-center xl:gap-0 gap-30'>
                             {data.map(
                                 (item, index) =>
                                     item.number > 0 && (
