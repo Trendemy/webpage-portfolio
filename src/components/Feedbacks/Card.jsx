@@ -23,11 +23,11 @@ const Card = ({ avatar, name, role, desc }) => {
                 <p className='text-paragraph'>{desc}</p>
             </div>
             <div className='flex items-center gap-3'>
-                <div className='size-20'>
+                <div className='size-20 flex'>
                     <Image
                         src={avatar}
                         alt={name}
-                        className='aspect-square rounded-full object-cover'
+                        className='size-full aspect-square rounded-full object-cover'
                     />
                 </div>
                 <div className='flex-1 flex flex-col'>
