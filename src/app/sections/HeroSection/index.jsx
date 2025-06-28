@@ -47,16 +47,20 @@ const HeroSection = ({
                             />
                         </div>
                     </div>
-                    <div className='w-4/6 lg:w-1/2 xl:w-1/3 relative flex justify-center'>
+                    <div className='flex-1 relative flex justify-center'>
                         <Tag
-                            className='top-4/5 -left-1/6 xl:-left-5 2xl:top-10/12'
+                            className='top-3/4 sm:top-4/5 2xl:top-10/12 left-[10%] sm:left-[10%] lg:left-[15%] xl:left-[10%]'
                             icon={Student}
                             name='Học viên'
                             number='1000+'
                         />
-                        <Image src={image} alt='girl' className='xl:w-4/5' />
+                        <Image
+                            src={image}
+                            alt='girl'
+                            className='w-3/5 md:w-1/2 xl:w-3/5'
+                        />
                         <Tag
-                            className='top-1/2 -right-1/5 xl:-right-7'
+                            className='top-1/2 right-0 sm:right-[5%] md:right-[10%] lg:right-[15%] xl:right-[5%]'
                             icon={Course}
                             name='Khóa học'
                             number='100+'
