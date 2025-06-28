@@ -9,7 +9,7 @@ const LecturerCard = ({ avatar, name, expertise, bio, facebook, linkedIn }) => {
                 <Image
                     src={avatar}
                     alt={name}
-                    className='rounded-t-3xl xl:rounded-tr-none xl:rounded-s-3xl object-cover'
+                    className='w-full rounded-t-3xl xl:rounded-tr-none xl:rounded-s-3xl object-cover'
                 />
             </div>
             <div className='flex-[1.5] border border-gray-400 border-t-0 xl:border-t xl:border-s-0 rounded-b-3xl xl:rounded-bl-none xl:rounded-e-3xl p-5'>
