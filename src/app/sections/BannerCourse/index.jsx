@@ -30,7 +30,7 @@ const BannerCourse = ({
                             highlight={highlightTitle}
                             className='heading-1 uppercase text-center xl:text-left'
                         >
-                            <HighlightTitle.Underline />
+                            <HighlightTitle.Underline className='translate-y-4/5' />
                         </HighlightTitle>
                         <p className='text-paragraph'>{description}</p>
                         <div className='text-center xl:text-left mt-3'>
