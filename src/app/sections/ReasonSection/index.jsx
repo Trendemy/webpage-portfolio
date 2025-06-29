@@ -48,14 +48,14 @@ const ReasonSection = ({
                             <Image
                                 src={images[0]}
                                 alt='reason-1'
-                                className='aspect-[1/1.3] rounded-xl object-cover'
+                                className='w-full aspect-[1/1.3] rounded-xl object-cover'
                             />
                         </div>
                         <div className='flex-1 -translate-y-12'>
                             <Image
                                 src={images[1]}
                                 alt='reason-2'
-                                className='aspect-[1/1.3] rounded-xl object-cover'
+                                className='w-full aspect-[1/1.3] rounded-xl object-cover'
                             />
                         </div>
                     </div>

@@ -37,7 +37,7 @@ const WhoShouldJoin = ({ title, objects, images, animation }) => {
                                     <Image
                                         src={images[0]}
                                         alt='Who Should Join'
-                                        className='rounded-2xl object-cover aspect-square'
+                                        className='w-full rounded-2xl object-cover aspect-square'
                                     />
                                 </div>
                             )}
@@ -46,7 +46,7 @@ const WhoShouldJoin = ({ title, objects, images, animation }) => {
                                     <Image
                                         src={images[1]}
                                         alt='Who Should Join'
-                                        className='rounded-2xl object-cover aspect-[1/1.5]'
+                                        className='w-full rounded-2xl object-cover aspect-[1/1.5]'
                                     />
                                 </div>
                             )}

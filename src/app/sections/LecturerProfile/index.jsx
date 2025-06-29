@@ -24,7 +24,7 @@ const LecturerProfile = ({ avatar, title, description, animation }) => {
                             <Image
                                 src={avatar}
                                 alt='Lecturer'
-                                className='rounded-full object-cover aspect-square'
+                                className='w-full rounded-full object-cover aspect-square'
                             />
                         )}
                     </div>

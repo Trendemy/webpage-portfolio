@@ -24,7 +24,7 @@ const Benefits = ({ title, data = [], images = [], animation }) => {
                                     <Image
                                         src={images[0]}
                                         alt='image benefits 1'
-                                        className='rounded-lg object-cover'
+                                        className='w-full rounded-lg object-cover'
                                     />
                                 </div>
                             )}
@@ -34,7 +34,7 @@ const Benefits = ({ title, data = [], images = [], animation }) => {
                                         <Image
                                             src={images[1]}
                                             alt='image benefits 2'
-                                            className='rounded-lg aspect-[1.5/1] object-cover'
+                                            className='size-full rounded-lg aspect-[1.5/1] object-cover'
                                         />
                                     </div>
                                 )}
@@ -43,7 +43,7 @@ const Benefits = ({ title, data = [], images = [], animation }) => {
                                         <Image
                                             src={images[2]}
                                             alt='image benefits 3'
-                                            className='rounded-lg aspect-[1.5/1] object-cover'
+                                            className='size-full rounded-lg aspect-[1.5/1] object-cover'
                                         />
                                     </div>
                                 )}

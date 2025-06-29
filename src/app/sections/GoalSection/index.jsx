@@ -36,14 +36,14 @@ const GoalSection = ({ title = '', data = [], images = [], animation }) => {
                                 <Image
                                     src={images[0]}
                                     alt={'Goal'}
-                                    className='aspect-[1/1.3] rounded-xl object-cover'
+                                    className='w-full aspect-[1/1.3] rounded-xl object-cover'
                                 />
                             </div>
                             <div className='absolute w-1/2 top-3/5 left-0 -translate-y-1/2'>
                                 <Image
                                     src={images[1]}
                                     alt={'Goal'}
-                                    className='aspect-square rounded-xl object-cover'
+                                    className='w-full aspect-square rounded-xl object-cover'
                                 />
                             </div>
                             <div className='absolute w-3/5 bottom-0 flex text-secondary'>

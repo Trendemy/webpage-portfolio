@@ -28,7 +28,7 @@ const BannerLecturer = ({ avatar, name, description }) => {
                             <Image
                                 src={avatar}
                                 alt='Giảng viên'
-                                className='rounded-2xl aspect-[4/3] object-cover'
+                                className='w-full rounded-2xl aspect-[4/3] object-cover'
                             />
                         </div>
                     )}

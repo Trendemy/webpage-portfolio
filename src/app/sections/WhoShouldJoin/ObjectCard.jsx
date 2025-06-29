@@ -8,7 +8,7 @@ const ObjectCard = ({ image, name, description }) => {
                 <Image
                     src={image}
                     alt={name}
-                    className='rounded-full aspect-square object-cover'
+                    className='size-full rounded-full aspect-square object-cover'
                 />
             </div>
             <div className='flex-1 flex flex-col gap-2'>

@@ -17,14 +17,14 @@ const CoreValues = ({ title = '', values = [], images = [], animation }) => {
                                     <Image
                                         src={images[0]}
                                         alt='image-core-1'
-                                        className='rounded-tl-[50%] object-cover'
+                                        className='w-full rounded-tl-[50%] object-cover'
                                     />
                                 </div>
                                 <div className='flex-1 flex'>
                                     <Image
                                         src={images[1]}
                                         alt='image-core-2'
-                                        className='rounded-full object-cover aspect-square'
+                                        className='w-full rounded-full object-cover aspect-square'
                                     />
                                 </div>
                             </div>
@@ -33,7 +33,7 @@ const CoreValues = ({ title = '', values = [], images = [], animation }) => {
                                 <Image
                                     src={images[2]}
                                     alt='image-core-3'
-                                    className='aspect-[1/2] xl:rounded-tr-[13rem] xl:rounded-bl-[13rem] lg:rounded-tr-[10rem] lg:rounded-bl-[10rem] rounded-tr-[7rem] rounded-bl-[7rem] object-cover'
+                                    className='w-full aspect-[1/2] xl:rounded-tr-[13rem] xl:rounded-bl-[13rem] lg:rounded-tr-[10rem] lg:rounded-bl-[10rem] rounded-tr-[7rem] rounded-bl-[7rem] object-cover'
                                 />
                             </div>
                         </div>

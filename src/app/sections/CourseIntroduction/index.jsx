@@ -28,7 +28,7 @@ const CourseIntroduction = ({
                                 <div className='flex-1 xl:translate-x-0 translate-x-5 -translate-y-10'>
                                     <Image
                                         src={images[0]}
-                                        className='rounded-3xl object-cover'
+                                        className='w-full rounded-3xl object-cover'
                                     />
                                 </div>
                             )}
@@ -36,7 +36,7 @@ const CourseIntroduction = ({
                                 <div className='flex-1 xl:-translate-x-10 -translate-x-5 translate-y-10'>
                                     <Image
                                         src={images[1]}
-                                        className='rounded-3xl object-cover'
+                                        className='w-full rounded-3xl object-cover'
                                     />
                                 </div>
                             )}

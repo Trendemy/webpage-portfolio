@@ -41,7 +41,7 @@ const FAQSection = ({ title = '', questions = [], images = [], animation }) => {
                             <Image
                                 src={images[1]}
                                 alt='image faq'
-                                className='aspect-[1/1.4] object-cover -rotate-12 rounded-md shadow-xl'
+                                className='w-full aspect-[1/1.4] object-cover -rotate-12 rounded-md shadow-xl'
                             />
                         </div>
                     </div>

@@ -48,7 +48,7 @@ const BannerCourse = ({
                             <div className='flex-1'>
                                 <Image
                                     src={images[0]}
-                                    className='aspect-[4/3] object-cover'
+                                    className='w-full aspect-[4/3] object-cover'
                                 />
                             </div>
                             {images?.[1] && (
