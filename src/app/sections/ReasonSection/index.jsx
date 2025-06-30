@@ -43,7 +43,7 @@ const ReasonSection = ({
                             })}
                         </div>
                     </div>
-                    <div className='flex-1 flex xl:gap-10 gap-5'>
+                    <div className='flex-1 flex xl:gap-10 gap-5 xl:mb-0 mb-10'>
                         <div className='relative flex-1 translate-y-12'>
                             <Image
                                 src={images[0]}
