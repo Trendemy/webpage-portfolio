@@ -44,18 +44,19 @@ const ReasonSection = ({
                         </div>
                     </div>
                     <div className='flex-1 flex xl:gap-10 gap-5'>
-                        <div className='flex-1 translate-y-12'>
+                        <div className='relative flex-1 translate-y-12'>
                             <Image
                                 src={images[0]}
                                 alt='reason-1'
-                                className='w-full aspect-[1/1.3] rounded-xl object-cover'
+                                className='w-full aspect-[3/4] rounded-xl object-cover'
                             />
+                            <div className='absolute w-20 h-10 lg:w-30 lg:h-15 bottom-0 right-0 bg-secondary rounded-b-full -rotate-45  translate-1/2' />
                         </div>
                         <div className='flex-1 -translate-y-12'>
                             <Image
                                 src={images[1]}
                                 alt='reason-2'
-                                className='w-full aspect-[1/1.3] rounded-xl object-cover'
+                                className='w-full aspect-[3/4] rounded-xl object-cover'
                             />
                         </div>
                     </div>

@@ -15,11 +15,11 @@ const CourseIntroduction = ({
     animation
 }) => {
     return (
-        <Section className='relative'>
+        <Section className='relative py-20'>
             <div className='circle-glow' />
             <Element className='container' name={sections.introduction.id}>
                 <div
-                    className='flex flex-col-reverse xl:flex-row justify-center items-center xl:gap-10 gap-20'
+                    className='flex flex-col-reverse xl:flex-row justify-center items-center xl:gap-0 gap-20'
                     data-aos={animation}
                 >
                     {Array.isArray(images) && images.length > 0 && (
@@ -28,15 +28,15 @@ const CourseIntroduction = ({
                                 <div className='flex-1 xl:translate-x-0 translate-x-5 -translate-y-10'>
                                     <Image
                                         src={images[0]}
-                                        className='w-full rounded-3xl object-cover'
+                                        className='w-full aspect-[2/3] rounded-3xl object-cover'
                                     />
                                 </div>
                             )}
                             {images?.[1] && (
-                                <div className='flex-1 xl:-translate-x-10 -translate-x-5 translate-y-10'>
+                                <div className='flex-1 xl:-translate-x-20 -translate-x-5 translate-y-10'>
                                     <Image
                                         src={images[1]}
-                                        className='w-full rounded-3xl object-cover'
+                                        className='w-full aspect-[2/3] rounded-3xl object-cover'
                                     />
                                 </div>
                             )}

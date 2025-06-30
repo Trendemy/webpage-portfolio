@@ -25,22 +25,22 @@ const BaseSection = ({
                         <Signal className='shrink-0' />
                     </div>
                     <div className='relative flex-1'>
-                        <div className='w-3/5 flex aspect-[1/1.7] z-1'>
+                        <div className='absolute w-2/5 xl:w-1/2 top-[10%] xl:top-[5%] left-[57%] xl:left-[55%] rotate-12 xl:rotate-5 text-secondary -z-1'>
+                            <ArrowLine className='shrink-0' />
+                        </div>
+                        <div className='w-3/5 flex'>
                             <Image
                                 src={images[0]}
                                 alt='image left'
-                                className='object-cover rounded-t-full rounded-b-full'
+                                className='w-full aspect-[5/8] object-cover rounded-t-full rounded-b-full'
                             />
                         </div>
-                        <div className='absolute bottom-0 right-0 w-1/2 flex aspect-[1/1.7] translate-y-5'>
+                        <div className='absolute bottom-0 right-0 w-1/2 flex translate-y-5'>
                             <Image
                                 src={images[1]}
                                 alt='image right'
-                                className='object-cover rounded-t-full rounded-b-full border-l-2 border-white'
+                                className='w-full aspect-[2/3] object-cover rounded-t-full rounded-b-full border-l-2 border-white'
                             />
-                            <div className='absolute w-1/2 xl:w-full top-3 left-1/2 text-secondary -translate-y-full -z-1'>
-                                <ArrowLine className='shrink-0' />
-                            </div>
                         </div>
                     </div>
                     <div className='flex-1'>
