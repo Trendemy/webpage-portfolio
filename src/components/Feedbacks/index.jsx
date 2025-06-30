@@ -18,7 +18,7 @@ import Card from '~/components/Feedbacks/Card';
  * @param {string} props.data[].role - User's role/title.
  * @param {string} props.data[].feedback - User's feedback text.
  */
-const Feedbacks = ({ data = [] }) => {
+const Feedbacks = ({ data = [], center }) => {
     const settings = {
         infinite: true,
         dots: true,
@@ -40,6 +40,7 @@ const Feedbacks = ({ data = [] }) => {
                         name={item.name}
                         role={item.role}
                         desc={item.feedback}
+                        center={center}
                     />
                 ))}
             </Slider>
@@ -55,7 +56,8 @@ Feedbacks.propTypes = {
             role: PropTypes.string.isRequired,
             feedback: PropTypes.string.isRequired
         })
-    )
+    ),
+    center: PropTypes.bool
 };
 
 export default Feedbacks;

@@ -25,7 +25,7 @@ const LecturerRatings = ({ title, data, animation }) => {
                                 <ArrowLine className='shrink-0' />
                             </div>
                             <div className='xl:w-3/5 mx-auto'>
-                                <Feedbacks data={data} />
+                                <Feedbacks data={data} center />
                             </div>
                             <div className='absolute w-[10%] right-0 bottom-0 hidden xl:flex text-secondary'>
                                 <BrushStroke className='shrink-0' />

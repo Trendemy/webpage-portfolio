@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Quotes } from '~/components/Icons';
 import { Image } from '~/components/UI';
+import { cn } from '~/utils';
 
 /**
  * Card Component
@@ -16,13 +17,17 @@ import { Image } from '~/components/UI';
  * @param {string} props.role - User's role.
  * @param {string} props.desc - User's feedback text.
  */
-const Card = ({ avatar, name, role, desc }) => {
+const Card = ({ avatar, name, role, desc, center }) => {
     return (
         <div className='w-full flex flex-col gap-5'>
             <div>
                 <p className='text-paragraph'>{desc}</p>
             </div>
-            <div className='flex items-center gap-3'>
+            <div
+                className={cn('flex items-center gap-3', {
+                    'relative flex-col justify-center my-5': center
+                })}
+            >
                 <div className='size-20 flex'>
                     <Image
                         src={avatar}
@@ -30,11 +35,19 @@ const Card = ({ avatar, name, role, desc }) => {
                         className='size-full aspect-square rounded-full object-cover'
                     />
                 </div>
-                <div className='flex-1 flex flex-col'>
-                    <h3 className='text-lg font-bold'>{name}</h3>
+                <div
+                    className={cn('flex-1 flex flex-col', {
+                        'items-center': center
+                    })}
+                >
+                    <h3 className='text-xl font-bold'>{name}</h3>
                     <p className='text-lg font-normal text-primary'>{role}</p>
                 </div>
-                <div className='w-12 flex mb-auto -translate-y-5'>
+                <div
+                    className={cn('w-12 flex mb-auto -translate-y-5', {
+                        'absolute top-0 right-0 translate-y-0': center
+                    })}
+                >
                     <Quotes className='shrink-0 fill-primary' />
                 </div>
             </div>
@@ -46,7 +59,8 @@ Card.propTypes = {
     avatar: PropTypes.string,
     name: PropTypes.string,
     role: PropTypes.string,
-    desc: PropTypes.string
+    desc: PropTypes.string,
+    center: PropTypes.bool
 };
 
 export default Card;
