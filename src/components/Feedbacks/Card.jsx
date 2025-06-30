@@ -48,7 +48,7 @@ const Card = ({ avatar, name, role, desc, center }) => {
                         'absolute top-0 right-0 translate-y-0': center
                     })}
                 >
-                    <Quotes className='shrink-0 fill-primary' />
+                    <Quotes className='w-full shrink-0 fill-primary' />
                 </div>
             </div>
         </div>
