@@ -2,7 +2,7 @@ import reason1 from '~/assets/images/brown-coast.webp';
 import reason2 from '~/assets/images/study-men.webp';
 
 const reason = {
-    title: 'Tại sao nên chọn chúng tôi',
+    title: 'Tại sao chọn chúng tôi',
     content: [
         'Giảng viên Chuyên gia Thực chiến tại Trendemy: Đội ngũ giảng viên là các chuyên gia đầu ngành, sở hữu kinh nghiệm làm việc thực tế sâu sắc trong Phân tích Dữ liệu (Excel, SQL, Python, Power BI), Trí tuệ Nhân tạo (AI Agent, Prompt Engineering) và Tự động hóa (Automation Workflow).',
         'Nội dung Đào tạo Chất lượng & Cập nhật tại Trendemy: Khóa học được biên soạn tỉ mỉ, bám sát xu hướng công nghệ mới nhất trong AI, Data Analysis (với Excel, Power BI, SQL, Python), Automation, đảm bảo học viên nắm vững kiến thức nền tảng và kỹ năng thực hành sẵn sàng cho công việc.',
