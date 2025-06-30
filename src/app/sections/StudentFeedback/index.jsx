@@ -30,7 +30,7 @@ const StudentFeedback = ({
                                     <Image
                                         src={images[0]}
                                         alt='imagefeedback 1'
-                                        className='w-full rounded-e-[10rem] object-cover'
+                                        className='w-full aspect-[6/11] xl:aspect-[1/2] rounded-e-[10rem] object-cover'
                                     />
                                 </div>
                             )}
@@ -39,7 +39,7 @@ const StudentFeedback = ({
                                     <Image
                                         src={images[1]}
                                         alt='imagefeedback 2'
-                                        className='w-full rounded-s-[10rem] object-cover'
+                                        className='w-full aspect-[6/11] xl:aspect-[1/2] rounded-s-[10rem] object-cover'
                                     />
                                 </div>
                             )}
