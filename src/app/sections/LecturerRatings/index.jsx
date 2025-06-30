@@ -22,13 +22,13 @@ const LecturerRatings = ({ title, data, animation }) => {
                     {Array.isArray(data) && data.length > 0 && (
                         <div className='relative grid grid-cols-1 xl:grid-cols-12'>
                             <div className='xl:col-span-2 flex justify-center text-secondary'>
-                                <ArrowLine className='absolute top-1/2 left-0 xl:static w-10 md:w-14 xl:w-4/5 h-fit -translate-y-full md:translate-y-0 shrink-0' />
+                                <ArrowLine className='absolute top-1/2 left-0 xl:static w-10 md:w-14 xl:w-4/5 h-fit -translate-y-1/2 md:translate-y-0 shrink-0' />
                             </div>
                             <div className='xl:col-span-8 w-full mx-auto'>
                                 <Feedbacks data={data} center />
                             </div>
                             <div className='xl:col-span-2 flex justify-center items-end text-secondary'>
-                                <BrushStroke className='absolute right-0 xl:static w-20 md:w-28 xl:w-4/5 h-fit shrink-0' />
+                                <BrushStroke className='absolute right-0 xl:static w-20 md:w-28 xl:w-4/5 h-fit translate-y-1/2 xl:translate-y-0 shrink-0' />
                             </div>
                         </div>
                     )}
