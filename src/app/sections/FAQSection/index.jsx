@@ -10,10 +10,10 @@ const FAQSection = ({ title = '', questions = [], images = [], animation }) => {
         <Section>
             <Element className='container' name={sections.faq.id}>
                 <div
-                    className='flex flex-col xl:flex-row gap-20'
+                    className='grid grid-cols-1 xl:grid-cols-12 gap-20'
                     data-aos={animation}
                 >
-                    <div className='flex-1 flex flex-col gap-5'>
+                    <div className='xl:col-span-7 flex flex-col gap-5'>
                         <h2 className='heading-2 text-primary uppercase text-center xl:text-left'>
                             {title}
                         </h2>
@@ -29,19 +29,19 @@ const FAQSection = ({ title = '', questions = [], images = [], animation }) => {
                             ))}
                         </div>
                     </div>
-                    <div className='relative flex-1 flex before:content after:content before:absolute after:absolute before:size-1/5 after:size-1/3 before:bg-secondary after:bg-secondary before:top-1/2 after:right-0 after:bottom-0 after:translate-y-1/4 before:-z-1 after:-z-1'>
+                    <div className='relative xl:col-span-5 flex before:content after:content before:absolute after:absolute before:size-1/5 after:w-1/3 after:aspect-square before:bg-secondary after:bg-secondary before:top-1/2 after:right-0 after:bottom-0 after:translate-y-1/4 before:-z-1 after:-z-1'>
                         <div className='flex-1 flex justify-center'>
                             <Image
                                 src={images[0]}
                                 alt='image faq'
-                                className='w-[70%] aspect-[1/1.5] object-cover rounded-md'
+                                className='w-4/5 aspect-[2/3] object-cover rounded-md'
                             />
                         </div>
-                        <div className='absolute w-2/6 bottom-0 left-0'>
+                        <div className='absolute w-2/5 bottom-0 left-0'>
                             <Image
                                 src={images[1]}
                                 alt='image faq'
-                                className='w-full aspect-[1/1.4] object-cover -rotate-12 rounded-md shadow-xl'
+                                className='w-full aspect-[3/4] object-cover -rotate-12 rounded-md shadow-xl'
                             />
                         </div>
                     </div>

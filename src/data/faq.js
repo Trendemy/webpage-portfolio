@@ -2,7 +2,7 @@ import faqImg1 from '~/assets/images/madam.webp';
 import faqImg2 from '~/assets/images/writing.webp';
 
 const faq = {
-    title: 'NHỮNG CÂU HỎI PHỔ BIẾN THƯỜNG GẶP',
+    title: 'NHỮNG CÂU HỎI THƯỜNG GẶP',
     content: [
         {
             id: 1,
