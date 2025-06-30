@@ -18,7 +18,7 @@ const CourseCard = ({
     return (
         <Link
             className={cn(
-                'bg-white flex flex-col border-2 rounded-2xl border-gray-400 transition-shadow cursor-pointer gap-5 px-5 py-10',
+                'bg-white flex flex-col border-2 rounded-2xl border-gray-400 transition-colors hover:border-primary cursor-pointer gap-5 px-5 py-10',
                 className
             )}
             to={to}
