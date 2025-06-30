@@ -20,15 +20,15 @@ const LecturerRatings = ({ title, data, animation }) => {
                         </h2>
                     )}
                     {Array.isArray(data) && data.length > 0 && (
-                        <div className='relative'>
-                            <div className='absolute w-[10%] top-0 left-0 hidden xl:flex text-secondary'>
-                                <ArrowLine className='shrink-0' />
+                        <div className='relative grid grid-cols-1 xl:grid-cols-12'>
+                            <div className='xl:col-span-2 flex justify-center text-secondary'>
+                                <ArrowLine className='absolute top-1/2 left-0 xl:static w-14 xl:w-4/5 h-fit shrink-0' />
                             </div>
-                            <div className='xl:w-3/5 mx-auto'>
+                            <div className='xl:col-span-8 w-full mx-auto'>
                                 <Feedbacks data={data} center />
                             </div>
-                            <div className='absolute w-[10%] right-0 bottom-0 hidden xl:flex text-secondary'>
-                                <BrushStroke className='shrink-0' />
+                            <div className='xl:col-span-2 flex justify-center items-end text-secondary'>
+                                <BrushStroke className='absolute right-0 xl:static w-28 xl:w-4/5 h-fit shrink-0' />
                             </div>
                         </div>
                     )}
