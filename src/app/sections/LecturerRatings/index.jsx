@@ -8,7 +8,7 @@ import BrushStroke from './components/BrushStroke';
 
 const LecturerRatings = ({ title, data, animation }) => {
     return (
-        <Section>
+        <Section className='pb-20'>
             <div className='container' data-aos={animation}>
                 <Element
                     className='flex flex-col gap-10'

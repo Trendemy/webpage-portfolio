@@ -1,3 +1,6 @@
+.slick-dots {
+    bottom: -30px;
+}
 .slick-dots li button {
     display: block;
     width: 14px;

@@ -19,7 +19,7 @@ import { cn } from '~/utils';
  */
 const Card = ({ avatar, name, role, desc, center }) => {
     return (
-        <div className='w-full flex flex-col gap-5'>
+        <div className='w-full flex flex-col gap-10'>
             <div>
                 <p className='text-paragraph'>{desc}</p>
             </div>
