@@ -8,7 +8,7 @@ import Arrow from './components/Arrow';
 
 const WhoShouldJoin = ({ title, objects, images, animation }) => {
     return (
-        <Section>
+        <Section className='pb-20'>
             <Element className='container' name={sections.join.id}>
                 <div
                     className='flex flex-col xl:flex-row justify-center items-center xl:gap-0 gap-10'
