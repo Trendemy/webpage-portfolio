@@ -1,7 +1,6 @@
 import { useTitle } from '~/hooks';
 import {
     HeroSection,
-    BaseSection,
     ContactSection,
     CoreValues,
     FAQSection,
@@ -9,16 +8,17 @@ import {
     MissionVision,
     ReasonSection,
     Statistics,
-    StudentFeedback
+    StudentFeedback,
+    BreakthroughCoursesSection
 } from '~/app/sections';
 import {
-    base,
     contact,
     coreValues,
     courses,
     faq,
     feedbacks,
     hero,
+    newCourses,
     reason,
     statistics,
     visionMission
@@ -35,11 +35,11 @@ const HomePage = () => {
                 description={hero.description}
                 image={hero.image}
             />
-            <BaseSection
-                title={base.title}
-                highlightTitle={base.highlightTitle}
-                description={base.description}
-                images={base.images}
+            <BreakthroughCoursesSection
+                title={newCourses.title}
+                highlightTitle={newCourses.highlightTitle}
+                image={newCourses.image}
+                data={newCourses.data}
                 animation='fade-up'
             />
             <MissionVision

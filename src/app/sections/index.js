@@ -22,6 +22,7 @@ import StudentFeedback from '~/app/sections/StudentFeedback';
 import Summary from '~/app/sections/Summary';
 import WhoShouldJoin from '~/app/sections/WhoShouldJoin';
 import SliderSection from '~/app/sections/SliderSection';
+import BreakthroughCoursesSection from '~/app/sections/BreakthroughCoursesSection';
 
 export {
     Section,
@@ -47,5 +48,6 @@ export {
     StudentFeedback,
     Summary,
     WhoShouldJoin,
-    SliderSection
+    SliderSection,
+    BreakthroughCoursesSection
 };

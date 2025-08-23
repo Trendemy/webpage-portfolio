@@ -39,6 +39,7 @@ import Certificate from '~/components/Icons/Certificate';
 import Article from '~/components/Icons/Article';
 import Project from '~/components/Icons/Project';
 import Signal from '~/components/Icons/Signal';
+import Fire from '~/components/Icons/Fire';
 
 export {
     Signal,
@@ -81,5 +82,6 @@ export {
     ChevronUp,
     Certificate,
     Article,
-    Project
+    Project,
+    Fire
 };

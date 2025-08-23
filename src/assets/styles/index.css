@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin 'tailwind-scrollbar';
 @import './vendor.css';
 @import './animations.css';
 
@@ -44,5 +45,25 @@
     }
     .circle-glow {
         @apply absolute top-1/2 left-0 h-1/2 rounded-full aspect-square opacity-50 select-none pointer-events-none -z-10 shadow-[200px_0_99999px_0_var(--color-primary)] -translate-x-full -translate-y-1/2;
+    }
+}
+
+@layer utilities {
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-secondary) transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: var(--color-secondary);
+        border-radius: 9999px;
     }
 }
