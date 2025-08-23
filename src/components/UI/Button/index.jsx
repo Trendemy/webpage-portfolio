@@ -17,7 +17,7 @@ const Button = ({
         <button
             type={type}
             className={cn(
-                'relative text-lg font-bold bg-transparent rounded-[5px] cursor-pointer select-none px-7 py-3.5 z-1 transition-all duration-300 ease overflow-hidden',
+                'relative text-lg font-bold bg-transparent rounded-sm shadow-[0px_7px_7px_0px_#00000026] cursor-pointer select-none px-6 py-3.5 z-1 transition-all duration-300 ease overflow-hidden',
                 'after:content after:absolute after:w-[510%] after:aspect-square after:rounded-full after:bg-secondary-2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:transition-all after:duration-300 after:ease-in-out after:-z-1',
                 {
                     'after:top-[100%] hover:after:top-[150%] hover:after:-translate-y-full hover:after:scale-100':
