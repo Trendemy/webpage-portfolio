@@ -5,7 +5,7 @@ import BreakthroughRegisterModal from './components/BreakthroughRegisterModal';
 import BreakthroughCourseTabs from './components/BreakthroughCourseTabs';
 import BreakthroughCourseList from './components/BreakthroughCourseList';
 import HighlightTitle from '~/app/sections/components/HighlightTitle';
-import { Button, Image } from '~/components/UI';
+import { Image } from '~/components/UI';
 import { Hexagon, Octagram } from '~/components/Icons';
 
 function BreakthroughCoursesSection({
@@ -69,9 +69,6 @@ function BreakthroughCoursesSection({
                                         courses={courses}
                                         onRegister={() => setIsOpen(true)}
                                     />
-                                </div>
-                                <div className='mt-5 text-center xl:text-left'>
-                                    <Button secondary>Bắt đầu ngay</Button>
                                 </div>
                             </div>
                         </div>

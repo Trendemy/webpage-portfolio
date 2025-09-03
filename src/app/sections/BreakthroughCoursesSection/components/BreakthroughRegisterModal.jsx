@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Image, Modal } from '~/components/UI';
+import { Button, Image, Modal } from '~/components/UI';
 import { cn } from '~/utils';
 import DA1 from '~/assets/images/DA2025-1.png';
 import DA2 from '~/assets/images/DA2025-2.png';
@@ -17,7 +17,7 @@ function BreakthroughRegisterModal({ isOpen, onClose }) {
             open={isOpen}
             onClose={onClose}
             center
-            className='relative w-[33.75rem] max-h-[90vh] max-w-[90vw] flex flex-col bg-white rounded-2xl'
+            className='relative w-[36rem] max-h-[90vh] max-w-[90vw] flex flex-col bg-white rounded-2xl'
         >
             <div className='h-10 flex justify-end'>
                 <div className='size-10 flex justify-center items-center'>
@@ -72,6 +72,22 @@ function BreakthroughRegisterModal({ isOpen, onClose }) {
                             />
                         ))}
                     </div>
+                </div>
+                <div className='flex justify-center items-center gap-8 mb-5'>
+                    <Button
+                        primary
+                        onClick={() => {
+                            window.open(
+                                'https://docs.google.com/forms/d/1yYMsVE2tL0SbwHeedK59oyNhBl0g7UEBv83AuU8qs40/viewform?fbclid=IwY2xjawMj9clleHRuA2FlbQIxMABicmlkETFTbkU5Nmk2YUZCQ0VPcUh6AR6NdmtpeIkZ4WtdoWlcb_ny5-x0cg0psipjflUMalKRvUTepsklGkZxfHS_pg_aem_hG0XVWRVRgZpX9Sww3snMA&edit_requested=true',
+                                '_blank'
+                            );
+                        }}
+                    >
+                        Đăng ký ngay
+                    </Button>
+                    <Button outline primary onClick={onClose}>
+                        Hủy
+                    </Button>
                 </div>
             </div>
         </Modal>

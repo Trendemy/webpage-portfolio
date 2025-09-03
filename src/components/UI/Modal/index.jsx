@@ -25,6 +25,17 @@ const Modal = ({
         };
     }, [onClose]);
 
+    useEffect(() => {
+        if (open) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [open]);
+
     const handleMouseDown = (e) => {
         if (e.target === e.currentTarget) {
             setOverlayClick(true);
