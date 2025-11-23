@@ -1,8 +1,32 @@
 import Portal from '~/components/Portal';
 import poster from '~/assets/images/english_poster.png';
 import { cn } from '~/utils';
+import { useEffect } from 'react';
 
 function Poster({ open, onClose }) {
+   useEffect(() => {
+      const handleKeyDown = (event) => {
+         if (event.key === 'Escape') {
+            onClose();
+         }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+         window.removeEventListener('keydown', handleKeyDown);
+      };
+   }, [onClose]);
+
+   useEffect(() => {
+      if (open) {
+         document.body.style.overflow = 'hidden';
+      } else {
+         document.body.style.overflow = '';
+      }
+      return () => {
+         document.body.style.overflow = '';
+      };
+   }, [open]);
+
    if (!open) return null;
 
    return (
@@ -21,7 +45,7 @@ function Poster({ open, onClose }) {
                )}
                onClick={onClose}
             />
-            <img src={poster} alt='poster' />
+            <img src={poster} alt='poster' className='rounded-xl' />
          </div>
       </Portal>
    );
