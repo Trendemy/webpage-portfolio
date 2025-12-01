@@ -22,8 +22,6 @@ function BreakthroughCoursesSection({
       setCourses(selected?.courses || []);
    }, [data, tab]);
 
-   console.log(courses);
-
    return (
       <>
          <Section>
