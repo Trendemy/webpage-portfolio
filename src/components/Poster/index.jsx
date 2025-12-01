@@ -1,7 +1,8 @@
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Portal from '~/components/Portal';
 import poster from '~/assets/images/english_poster.png';
 import { cn } from '~/utils';
-import { useEffect } from 'react';
 
 function Poster({ open, onClose }) {
    useEffect(() => {
@@ -50,5 +51,10 @@ function Poster({ open, onClose }) {
       </Portal>
    );
 }
+
+Poster.propTypes = {
+   open: PropTypes.bool.isRequired,
+   onClose: PropTypes.func.isRequired
+};
 
 export default Poster;
