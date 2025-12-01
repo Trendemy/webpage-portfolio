@@ -39,7 +39,7 @@ const Footer = () => {
                         <Link to='khoa-hoc/data-analyst'>Data Analyst</Link>
                      </li>
                      <li>
-                        <Link to='khoa-hoc/data-analyst'>English for IT</Link>
+                        <Link to='khoa-hoc/english-for-it'>English for IT</Link>
                      </li>
                      <li>
                         <Link to='khoa-hoc/data-analyst'>AI Agent</Link>
