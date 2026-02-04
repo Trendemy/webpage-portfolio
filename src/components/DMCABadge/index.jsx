@@ -1,4 +1,17 @@
+import { useEffect } from 'react';
+
 function DMCABadge() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://images.dmca.com/Badges/DMCABadgeHelper.min.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <a
       href='//www.dmca.com/Protection/Status.aspx?ID=dea6bea1-7fc3-4db5-b24b-1f1b3d0460f0'
